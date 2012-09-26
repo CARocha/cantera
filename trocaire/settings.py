@@ -26,7 +26,7 @@ ADMIN_MEDIA_PREFIX = '/admin/'
 
 STATIC_ROOT = ''
 
-STATIC_URL = '/files/'
+STATIC_URL = '/media/'
 
 STATICFILES_DIRS = (
     # Put strings here, like "/home/html/static" or "C:/www/django/static".
