@@ -1,0 +1,587 @@
+[
+  {
+    "pk": 1,
+    "model": "ingresos.fuentes",
+    "fields": {
+      "nombre": "Agricultura",
+      "clasificacion": 1
+    }
+  },
+  {
+    "pk": 2,
+    "model": "ingresos.fuentes",
+    "fields": {
+      "nombre": "Ganado mayor",
+      "clasificacion": 1
+    }
+  },
+  {
+    "pk": 3,
+    "model": "ingresos.fuentes",
+    "fields": {
+      "nombre": "Ganado menor",
+      "clasificacion": 1
+    }
+  },
+  {
+    "pk": 4,
+    "model": "ingresos.fuentes",
+    "fields": {
+      "nombre": "L\u00e1cteos, huevos, miel ",
+      "clasificacion": 1
+    }
+  },
+  {
+    "pk": 5,
+    "model": "ingresos.fuentes",
+    "fields": {
+      "nombre": "Productos procesados... excepto l\u00e1cteos",
+      "clasificacion": 7
+    }
+  },
+  {
+    "pk": 6,
+    "model": "ingresos.fuentes",
+    "fields": {
+      "nombre": "Pulper\u00eda, venta",
+      "clasificacion": 2
+    }
+  },
+  {
+    "pk": 7,
+    "model": "ingresos.fuentes",
+    "fields": {
+      "nombre": "Actividades comerciales: no incluye la venta de producci\u00f3n familiar",
+      "clasificacion": 2
+    }
+  },
+  {
+    "pk": 8,
+    "model": "ingresos.fuentes",
+    "fields": {
+      "nombre": "Venta de le\u00f1a, madera y otros productos forestales",
+      "clasificacion": 3
+    }
+  },
+  {
+    "pk": 9,
+    "model": "ingresos.fuentes",
+    "fields": {
+      "nombre": "Trabajo asalariado (jornal y otros empleos no calificados)",
+      "clasificacion": 4
+    }
+  },
+  {
+    "pk": 10,
+    "model": "ingresos.fuentes",
+    "fields": {
+      "nombre": "Trabajo asalariado (empleos calificados): maestra, enfermeras, contador, etc.",
+      "clasificacion": 4
+    }
+  },
+  {
+    "pk": 11,
+    "model": "ingresos.fuentes",
+    "fields": {
+      "nombre": "Remesas familiares (originadas en el pais o en el exterior)",
+      "clasificacion": 5
+    }
+  },
+  {
+    "pk": 12,
+    "model": "ingresos.fuentes",
+    "fields": {
+      "nombre": "Alquiler de tierras, casas, otros alquileres (incluye bueyes para arar)",
+      "clasificacion": 6
+    }
+  },
+  {
+    "pk": 13,
+    "model": "ingresos.fuentes",
+    "fields": {
+      "nombre": "Otros: costura, artesan\u00eda",
+      "clasificacion": 7
+    }
+  },
+  
+  {
+    "pk": 1,
+    "model": "ingresos.ciperiodos",
+    "fields": {
+      "nombre": "Ma\u00edz"
+    }
+  },
+  {
+    "pk": 2,
+    "model": "ingresos.ciperiodos",
+    "fields": {
+      "nombre": "Ma\u00edz en elote"
+    }
+  },
+  {
+    "pk": 3,
+    "model": "ingresos.ciperiodos",
+    "fields": {
+      "nombre": "Frijol"
+    }
+  },
+  {
+    "pk": 4,
+    "model": "ingresos.ciperiodos",
+    "fields": {
+      "nombre": "Sorgo"
+    }
+  },
+  {
+    "pk": 1,
+    "model": "ingresos.cipermanentes",
+    "fields": {
+      "nombre": "Caf\u00e9"
+    }
+  },
+  {
+    "pk": 2,
+    "model": "ingresos.cipermanentes",
+    "fields": {
+      "nombre": "Cacao"
+    }
+  },
+  {
+    "pk": 3,
+    "model": "ingresos.cipermanentes",
+    "fields": {
+      "nombre": "Pl\u00e1tano"
+    }
+  },
+  {
+    "pk": 4,
+    "model": "ingresos.cipermanentes",
+    "fields": {
+      "nombre": "Guineo"
+    }
+  },
+  {
+    "pk": 1,
+    "model": "ingresos.ciestacionales",
+    "fields": {
+      "nombre": "Malanga"
+    }
+  },
+  {
+    "pk": 2,
+    "model": "ingresos.ciestacionales",
+    "fields": {
+      "nombre": "Yuca"
+    }
+  },
+  {
+    "pk": 3,
+    "model": "ingresos.ciestacionales",
+    "fields": {
+      "nombre": "Quequisque"
+    }
+  },
+  {
+    "pk": 4,
+    "model": "ingresos.ciestacionales",
+    "fields": {
+      "nombre": "Camote"
+    }
+  },
+  {
+    "pk": 5,
+    "model": "ingresos.ciestacionales",
+    "fields": {
+      "nombre": "Pi\u00f1a"
+    }
+  },
+  {
+    "pk": 6,
+    "model": "ingresos.ciestacionales",
+    "fields": {
+      "nombre": "C\u00edtricos"
+    }
+  },
+  {
+    "pk": 7,
+    "model": "ingresos.ciestacionales",
+    "fields": {
+      "nombre": "Papayas"
+    }
+  },
+  {
+    "pk": 8,
+    "model": "ingresos.ciestacionales",
+    "fields": {
+      "nombre": "Arroz"
+    }
+  },
+  {
+    "pk": 1,
+    "model": "ingresos.cihortalizas",
+    "fields": {
+      "nombre": "Tomate"
+    }
+  },
+  {
+    "pk": 2,
+    "model": "ingresos.cihortalizas",
+    "fields": {
+      "nombre": "Chiltoma"
+    }
+  },
+  {
+    "pk": 3,
+    "model": "ingresos.cihortalizas",
+    "fields": {
+      "nombre": "Chiltoma grande"
+    }
+  },
+  {
+    "pk": 4,
+    "model": "ingresos.cihortalizas",
+    "fields": {
+      "nombre": "Cebolla criolla"
+    }
+  },
+  {
+    "pk": 5,
+    "model": "ingresos.cihortalizas",
+    "fields": {
+      "nombre": "Cebolla amarilla"
+    }
+  },
+  {
+    "pk": 6,
+    "model": "ingresos.cihortalizas",
+    "fields": {
+      "nombre": "Zanahoria"
+    }
+  },
+  {
+    "pk": 7,
+    "model": "ingresos.cihortalizas",
+    "fields": {
+      "nombre": "Remolacha"
+    }
+  },
+  {
+    "pk": 8,
+    "model": "ingresos.cihortalizas",
+    "fields": {
+      "nombre": "R\u00e1bano"
+    }
+  },
+  {
+    "pk": 9,
+    "model": "ingresos.cihortalizas",
+    "fields": {
+      "nombre": "Pepino"
+    }
+  },
+  {
+    "pk": 10,
+    "model": "ingresos.cihortalizas",
+    "fields": {
+      "nombre": "Ayote"
+    }
+  },
+  {
+    "pk": 11,
+    "model": "ingresos.cihortalizas",
+    "fields": {
+      "nombre": "Pipi\u00e1n"
+    }
+  },
+  {
+    "pk": 1,
+    "model": "ingresos.ganados",
+    "fields": {
+      "nombre": "Vacas  paridas"
+    }
+  },
+  {
+    "pk": 2,
+    "model": "ingresos.ganados",
+    "fields": {
+      "nombre": "Vacas  horras y vaquillas"
+    }
+  },
+  {
+    "pk": 3,
+    "model": "ingresos.ganados",
+    "fields": {
+      "nombre": "Terneros y Novillos"
+    }
+  },
+  {
+    "pk": 4,
+    "model": "ingresos.ganados",
+    "fields": {
+      "nombre": "Semental"
+    }
+  },
+  {
+    "pk": 5,
+    "model": "ingresos.ganados",
+    "fields": {
+      "nombre": "Bueyes"
+    }
+  },
+  {
+    "pk": 6,
+    "model": "ingresos.ganados",
+    "fields": {
+      "nombre": "Equinos, asnos, mulas"
+    }
+  },
+  {
+    "pk": 7,
+    "model": "ingresos.ganados",
+    "fields": {
+      "nombre": "Aves"
+    }
+  },
+  {
+    "pk": 8,
+    "model": "ingresos.ganados",
+    "fields": {
+      "nombre": "Cerdos"
+    }
+  },
+  {
+    "pk": 9,
+    "model": "ingresos.ganados",
+    "fields": {
+      "nombre": "Pelibuey/Cabros"
+    }
+  },
+  {
+    "pk": 10,
+    "model": "ingresos.ganados",
+    "fields": {
+      "nombre": "Peces"
+    }
+  },
+  {
+    "pk": 11,
+    "model": "ingresos.ganados",
+    "fields": {
+      "nombre": "Colmenas"
+    }
+  },
+  {
+    "pk": 1,
+    "model": "ingresos.productos",
+    "fields": {
+      "nombre": "Leche fresca, litros vendidos diarios",
+      "unidad": "Litros"
+    }
+  },
+  {
+    "pk": 2,
+    "model": "ingresos.productos",
+    "fields": {
+      "nombre": "Quesos, cuajadas, otros. Libras diarias",
+      "unidad": "Libras"
+    }
+  },
+  {
+    "pk": 3,
+    "model": "ingresos.productos",
+    "fields": {
+      "nombre": "Huevos, unidades diario",
+      "unidad": "unidad"
+    }
+  },
+  {
+    "pk": 4,
+    "model": "ingresos.productos",
+    "fields": {
+      "nombre": "Miel",
+      "unidad": "Litros"
+    }
+  },
+  {
+    "pk": 1,
+    "model": "ingresos.otrasactividades",
+    "fields": {
+      "nombre": "Pulper\u00eda, venta"
+    }
+  },
+  {
+    "pk": 2,
+    "model": "ingresos.otrasactividades",
+    "fields": {
+      "nombre": "Actividades comerciales"
+    }
+  },
+  {
+    "pk": 3,
+    "model": "ingresos.otrasactividades",
+    "fields": {
+      "nombre": "Jornal agropecuario"
+    }
+  },
+  {
+    "pk": 4,
+    "model": "ingresos.otrasactividades",
+    "fields": {
+      "nombre": "Corte de caf\u00e9 en el pais"
+    }
+  },
+  {
+    "pk": 5,
+    "model": "ingresos.otrasactividades",
+    "fields": {
+      "nombre": "Corte fuera del pa\u00eds"
+    }
+  },
+  {
+    "pk": 6,
+    "model": "ingresos.otrasactividades",
+    "fields": {
+      "nombre": "Empleos no-calificados no agropecuario"
+    }
+  },
+  {
+    "pk": 7,
+    "model": "ingresos.otrasactividades",
+    "fields": {
+      "nombre": "Empleos calificados"
+    }
+  },
+  {
+    "pk": 8,
+    "model": "ingresos.otrasactividades",
+    "fields": {
+      "nombre": "Alquiles de tierras o casas"
+    }
+  },
+  {
+    "pk": 9,
+    "model": "ingresos.otrasactividades",
+    "fields": {
+      "nombre": "Alquiler de animales"
+    }
+  },
+  {
+    "pk": 10,
+    "model": "ingresos.otrasactividades",
+    "fields": {
+      "nombre": "Remesas mas lo que trae"
+    }
+  },
+  {
+    "pk": 11,
+    "model": "ingresos.otrasactividades",
+    "fields": {
+      "nombre": "Le\u00f1as y otros forestales"
+    }
+  },
+  {
+    "pk": 1,
+    "model": "ingresos.productosprincipales",
+    "fields": {
+      "nombre": "Ma\u00edz/Maicillo"
+    }
+  },
+  {
+    "pk": 2,
+    "model": "ingresos.productosprincipales",
+    "fields": {
+      "nombre": "Frijol"
+    }
+  },
+  {
+    "pk": 3,
+    "model": "ingresos.productosprincipales",
+    "fields": {
+      "nombre": "Caf\u00e9"
+    }
+  },
+  {
+    "pk": 4,
+    "model": "ingresos.productosprincipales",
+    "fields": {
+      "nombre": "Cacao"
+    }
+  },
+  {
+    "pk": 5,
+    "model": "ingresos.productosprincipales",
+    "fields": {
+      "nombre": "Pl\u00e1tano"
+    }
+  },
+  {
+    "pk": 6,
+    "model": "ingresos.productosprincipales",
+    "fields": {
+      "nombre": "Hortalizas"
+    }
+  },
+  {
+    "pk": 7,
+    "model": "ingresos.productosprincipales",
+    "fields": {
+      "nombre": "Frutas"
+    }
+  },
+  {
+    "pk": 8,
+    "model": "ingresos.productosprincipales",
+    "fields": {
+      "nombre": "Ra\u00edces/tub\u00e9rculos"
+    }
+  },
+  {
+    "pk": 9,
+    "model": "ingresos.productosprincipales",
+    "fields": {
+      "nombre": "Procesados"
+    }
+  },
+  {
+    "pk": 10,
+    "model": "ingresos.productosprincipales",
+    "fields": {
+      "nombre": "Ganado mayor"
+    }
+  },
+  {
+    "pk": 11,
+    "model": "ingresos.productosprincipales",
+    "fields": {
+      "nombre": "L\u00e1cteos"
+    }
+  },
+  {
+    "pk": 12,
+    "model": "ingresos.productosprincipales",
+    "fields": {
+      "nombre": "Huevos"
+    }
+  },
+  {
+    "pk": 13,
+    "model": "ingresos.productosprincipales",
+    "fields": {
+      "nombre": "Le\u00f1a"
+    }
+  },
+  {
+    "pk": 14,
+    "model": "ingresos.productosprincipales",
+    "fields": {
+      "nombre": "Miel"
+    }
+  },
+  {
+    "pk": 15,
+    "model": "ingresos.productosprincipales",
+    "fields": {
+      "nombre": "Ganado menor"
+    }
+  }
+]

@@ -1,0 +1,379 @@
+[
+  {
+    "pk": 1,
+    "model": "produccion.cperiodos",
+    "fields": {
+      "nombre": "46. Ma\u00edz",
+      "unidad": "qq"
+    }
+  },
+  {
+    "pk": 2,
+    "model": "produccion.cperiodos",
+    "fields": {
+      "nombre": "47. Ma\u00edz en elote",
+      "unidad": "qq"
+    }
+  },
+  {
+    "pk": 3,
+    "model": "produccion.cperiodos",
+    "fields": {
+      "nombre": "48. Frijol",
+      "unidad": "qq"
+    }
+  },
+  {
+    "pk": 4,
+    "model": "produccion.cperiodos",
+    "fields": {
+      "nombre": "49. Sorgo",
+      "unidad": "qq"
+    }
+  },
+  {
+    "pk": 1,
+    "model": "produccion.cpermanentes",
+    "fields": {
+      "nombre": "50. Caf\u00e9",
+      "unidad": "qq"
+    }
+  },
+  {
+    "pk": 2,
+    "model": "produccion.cpermanentes",
+    "fields": {
+      "nombre": "51. Cacao",
+      "unidad": "qq"
+    }
+  },
+  {
+    "pk": 3,
+    "model": "produccion.cpermanentes",
+    "fields": {
+      "nombre": "52. Pl\u00e1tano",
+      "unidad": "cabeza"
+    }
+  },
+  {
+    "pk": 4,
+    "model": "produccion.cpermanentes",
+    "fields": {
+      "nombre": "53. Guineo",
+      "unidad": "cabeza"
+    }
+  },
+  {
+    "pk": 1,
+    "model": "produccion.canuales",
+    "fields": {
+      "nombre": "54. Malanga",
+      "unidad": "saco"
+    }
+  },
+  {
+    "pk": 2,
+    "model": "produccion.canuales",
+    "fields": {
+      "nombre": "55. Yuca",
+      "unidad": "saco"
+    }
+  },
+  {
+    "pk": 3,
+    "model": "produccion.canuales",
+    "fields": {
+      "nombre": "56. Quequisque",
+      "unidad": "saco"
+    }
+  },
+  {
+    "pk": 4,
+    "model": "produccion.canuales",
+    "fields": {
+      "nombre": "57. Camote",
+      "unidad": "saco"
+    }
+  },
+  {
+    "pk": 5,
+    "model": "produccion.canuales",
+    "fields": {
+      "nombre": "58. Pi\u00f1a",
+      "unidad": "docena"
+    }
+  },
+  {
+    "pk": 6,
+    "model": "produccion.canuales",
+    "fields": {
+      "nombre": "59. Citricos",
+      "unidad": "Libras"
+    }
+  },
+  {
+    "pk": 7,
+    "model": "produccion.canuales",
+    "fields": {
+      "nombre": "60. Papaya",
+      "unidad": "docena"
+    }
+  },
+  {
+    "pk": 8,
+    "model": "produccion.canuales",
+    "fields": {
+      "nombre": "61. Arroz",
+      "unidad": "qq"
+    }
+  },
+  {
+    "pk": 1,
+    "model": "produccion.chortalizas",
+    "fields": {
+      "nombre": "62. Tomate",
+      "unidad": "saco"
+    }
+  },
+  {
+    "pk": 2,
+    "model": "produccion.chortalizas",
+    "fields": {
+      "nombre": "63. Chiltoma",
+      "unidad": "Libras"
+    }
+  },
+  {
+    "pk": 3,
+    "model": "produccion.chortalizas",
+    "fields": {
+      "nombre": "64. Chiltoma grande",
+      "unidad": "Libras"
+    }
+  },
+  {
+    "pk": 4,
+    "model": "produccion.chortalizas",
+    "fields": {
+      "nombre": "65. Cebolla criolla",
+      "unidad": "saco"
+    }
+  },
+  {
+    "pk": 5,
+    "model": "produccion.chortalizas",
+    "fields": {
+      "nombre": "66. Cebolla amarilla",
+      "unidad": "qq"
+    }
+  },
+  {
+    "pk": 6,
+    "model": "produccion.chortalizas",
+    "fields": {
+      "nombre": "67. Zanahoria",
+      "unidad": "saco"
+    }
+  },
+  {
+    "pk": 7,
+    "model": "produccion.chortalizas",
+    "fields": {
+      "nombre": "68. Remolacha",
+      "unidad": "saco"
+    }
+  },
+  {
+    "pk": 8,
+    "model": "produccion.chortalizas",
+    "fields": {
+      "nombre": "69. R\u00e1bano",
+      "unidad": "saco"
+    }
+  },
+  {
+    "pk": 9,
+    "model": "produccion.chortalizas",
+    "fields": {
+      "nombre": "70. Pepino",
+      "unidad": "saco"
+    }
+  },
+  {
+    "pk": 10,
+    "model": "produccion.chortalizas",
+    "fields": {
+      "nombre": "71. Ayote",
+      "unidad": "unidad"
+    }
+  },
+  {
+    "pk": 11,
+    "model": "produccion.chortalizas",
+    "fields": {
+      "nombre": "72. Pipi\u00e1n",
+      "unidad": "unidad"
+    }
+  },
+  {
+    "pk": 1,
+    "model": "produccion.limitaciones",
+    "fields": {
+      "nombre": "1. Falta de agua para riego"
+    }
+  },
+  {
+    "pk": 2,
+    "model": "produccion.limitaciones",
+    "fields": {
+      "nombre": "2. Clima inestable: sequia, veranio, no llovio"
+    }
+  },
+  {
+    "pk": 3,
+    "model": "produccion.limitaciones",
+    "fields": {
+      "nombre": "3. Situaciones de desastre continuos, ciclicos"
+    }
+  },
+  {
+    "pk": 4,
+    "model": "produccion.limitaciones",
+    "fields": {
+      "nombre": "4. Falta de mano de obra"
+    }
+  },
+  {
+    "pk": 5,
+    "model": "produccion.limitaciones",
+    "fields": {
+      "nombre": "5. Falta de cr\u00e9dito... Acceso, cr\u00e9dito caro"
+    }
+  },
+  {
+    "pk": 6,
+    "model": "produccion.limitaciones",
+    "fields": {
+      "nombre": "6. Falta de tierra"
+    }
+  },
+  {
+    "pk": 7,
+    "model": "produccion.limitaciones",
+    "fields": {
+      "nombre": "7. Falta de dinero para insumos... insumos caros"
+    }
+  },
+  {
+    "pk": 8,
+    "model": "produccion.limitaciones",
+    "fields": {
+      "nombre": "8. Mala calidad del suelo"
+    }
+  },
+  {
+    "pk": 9,
+    "model": "produccion.limitaciones",
+    "fields": {
+      "nombre": "9. Plagas"
+    }
+  },
+  {
+    "pk": 10,
+    "model": "produccion.limitaciones",
+    "fields": {
+      "nombre": "10. Falta de asistencia tecnicas, falta de conocimiento del cultivo, su manejo"
+    }
+  },
+  {
+    "pk": 11,
+    "model": "produccion.limitaciones",
+    "fields": {
+      "nombre": "11. Falta de mercado"
+    }
+  },
+  {
+    "pk": 12,
+    "model": "produccion.limitaciones",
+    "fields": {
+      "nombre": "12. No aplica"
+    }
+  },
+  {
+    "pk": 1,
+    "model": "produccion.ganado",
+    "fields": {
+      "nombre": "Vacas  paridas"
+    }
+  },
+  {
+    "pk": 2,
+    "model": "produccion.ganado",
+    "fields": {
+      "nombre": "Vacas  horras y vaquillas"
+    }
+  },
+  {
+    "pk": 3,
+    "model": "produccion.ganado",
+    "fields": {
+      "nombre": "Terneros y Novillos"
+    }
+  },
+  {
+    "pk": 4,
+    "model": "produccion.ganado",
+    "fields": {
+      "nombre": "Semental"
+    }
+  },
+  {
+    "pk": 5,
+    "model": "produccion.ganado",
+    "fields": {
+      "nombre": "Bueyes"
+    }
+  },
+  {
+    "pk": 6,
+    "model": "produccion.ganado",
+    "fields": {
+      "nombre": "Equinos, asnos, mulas"
+    }
+  },
+  {
+    "pk": 7,
+    "model": "produccion.ganado",
+    "fields": {
+      "nombre": "Aves"
+    }
+  },
+  {
+    "pk": 8,
+    "model": "produccion.ganado",
+    "fields": {
+      "nombre": "Cerdos"
+    }
+  },
+  {
+    "pk": 9,
+    "model": "produccion.ganado",
+    "fields": {
+      "nombre": "Peli buey/Cabros"
+    }
+  },
+  {
+    "pk": 10,
+    "model": "produccion.ganado",
+    "fields": {
+      "nombre": "Peces"
+    }
+  },
+  {
+    "pk": 11,
+    "model": "produccion.ganado",
+    "fields": {
+      "nombre": "N\u00famero de colmenas"
+    }
+  }
+]

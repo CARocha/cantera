@@ -1,0 +1,142 @@
+[
+  {
+    "pk": 1,
+    "model": "diversidad_alimentaria.alimentos",
+    "fields": {
+      "nombre": "Ma\u00edz"
+    }
+  },
+  {
+    "pk": 2,
+    "model": "diversidad_alimentaria.alimentos",
+    "fields": {
+      "nombre": "Frijol"
+    }
+  },
+  {
+    "pk": 3,
+    "model": "diversidad_alimentaria.alimentos",
+    "fields": {
+      "nombre": "Sorgo / Maicillo"
+    }
+  },
+  {
+    "pk": 4,
+    "model": "diversidad_alimentaria.alimentos",
+    "fields": {
+      "nombre": "Soya"
+    }
+  },
+  {
+    "pk": 5,
+    "model": "diversidad_alimentaria.alimentos",
+    "fields": {
+      "nombre": "Arroz"
+    }
+  },
+  {
+    "pk": 6,
+    "model": "diversidad_alimentaria.alimentos",
+    "fields": {
+      "nombre": "Papas"
+    }
+  },
+  {
+    "pk": 7,
+    "model": "diversidad_alimentaria.alimentos",
+    "fields": {
+      "nombre": "Camote"
+    }
+  },
+  {
+    "pk": 8,
+    "model": "diversidad_alimentaria.alimentos",
+    "fields": {
+      "nombre": "Yuca"
+    }
+  },
+  {
+    "pk": 9,
+    "model": "diversidad_alimentaria.alimentos",
+    "fields": {
+      "nombre": "Malanga, quequisque"
+    }
+  },
+  {
+    "pk": 10,
+    "model": "diversidad_alimentaria.alimentos",
+    "fields": {
+      "nombre": "Verduras"
+    }
+  },
+  {
+    "pk": 11,
+    "model": "diversidad_alimentaria.alimentos",
+    "fields": {
+      "nombre": "Hortalizas"
+    }
+  },
+  {
+    "pk": 12,
+    "model": "diversidad_alimentaria.alimentos",
+    "fields": {
+      "nombre": "Frutas: cualquiera"
+    }
+  },
+  {
+    "pk": 13,
+    "model": "diversidad_alimentaria.alimentos",
+    "fields": {
+      "nombre": "Frutas de enramados"
+    }
+  },
+  {
+    "pk": 14,
+    "model": "diversidad_alimentaria.alimentos",
+    "fields": {
+      "nombre": "Lacteos: Quesos, cuajadas, mantequilla, crema"
+    }
+  },
+  {
+    "pk": 15,
+    "model": "diversidad_alimentaria.alimentos",
+    "fields": {
+      "nombre": "Huevos"
+    }
+  },
+  {
+    "pk": 16,
+    "model": "diversidad_alimentaria.alimentos",
+    "fields": {
+      "nombre": "Carnes y pescados"
+    }
+  },
+  {
+    "pk": 17,
+    "model": "diversidad_alimentaria.alimentos",
+    "fields": {
+      "nombre": "Aceite, grasas"
+    }
+  },
+  {
+    "pk": 18,
+    "model": "diversidad_alimentaria.alimentos",
+    "fields": {
+      "nombre": "Az\u00facar"
+    }
+  },
+  {
+    "pk": 19,
+    "model": "diversidad_alimentaria.alimentos",
+    "fields": {
+      "nombre": "Pan"
+    }
+  },
+  {
+    "pk": 20,
+    "model": "diversidad_alimentaria.alimentos",
+    "fields": {
+      "nombre": "Otros"
+    }
+  }
+]

@@ -1,0 +1,65 @@
+[
+  {
+    "pk": 1,
+    "model": "formas_propiedad.ciclo",
+    "fields": {
+      "nombre": "1) Alquila"
+    }
+  },
+  {
+    "pk": 2,
+    "model": "formas_propiedad.ciclo",
+    "fields": {
+      "nombre": "2) Medier\u00eda"
+    }
+  },
+  {
+    "pk": 3,
+    "model": "formas_propiedad.ciclo",
+    "fields": {
+      "nombre": "3) Prestada"
+    }
+  },
+  {
+    "pk": 4,
+    "model": "formas_propiedad.ciclo",
+    "fields": {
+      "nombre": "4) No aplica"
+    }
+  },
+  {
+    "pk": 1,
+    "model": "formas_propiedad.riegos",
+    "fields": {
+      "nombre": "1) Inundaci\u00f3n"
+    }
+  },
+  {
+    "pk": 2,
+    "model": "formas_propiedad.riegos",
+    "fields": {
+      "nombre": "2) Deslave"
+    }
+  },
+  {
+    "pk": 3,
+    "model": "formas_propiedad.riegos",
+    "fields": {
+      "nombre": "3) Incendio forestal"
+    }
+  },
+  {
+    "pk": 4,
+    "model": "formas_propiedad.riegos",
+    "fields": {
+      "nombre": "4)  Otros. \u00bfCu\u00e1l?"
+    }
+  },
+  {
+    "pk": 5,
+    "model": "formas_propiedad.riegos",
+    "fields": {
+      "nombre": "5) No hay"
+    }
+  }
+]

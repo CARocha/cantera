@@ -1,0 +1,107 @@
+[
+  {
+    "pk": 1,
+    "model": "calidad_vida.codigo",
+    "fields": {
+      "nombre": "1. Tiene que cuidar a sus hermanitos/as menores o atender labores de la casa (hogar)"
+    }
+  },
+  {
+    "pk": 2,
+    "model": "calidad_vida.codigo",
+    "fields": {
+      "nombre": "2. Tiene que trabajar en la agricultura"
+    }
+  },
+  {
+    "pk": 3,
+    "model": "calidad_vida.codigo",
+    "fields": {
+      "nombre": "3. Por problemas economicos (no tienen comida diario, no tiene ropa, zapatos etc.)"
+    }
+  },
+  {
+    "pk": 4,
+    "model": "calidad_vida.codigo",
+    "fields": {
+      "nombre": "4. No hay escuela o esta muy largo"
+    }
+  },
+  {
+    "pk": 5,
+    "model": "calidad_vida.codigo",
+    "fields": {
+      "nombre": "5. No los envian por que tiene que pasar por lugares peligrosos"
+    }
+  },
+  {
+    "pk": 6,
+    "model": "calidad_vida.codigo",
+    "fields": {
+      "nombre": "6. Por qu\u00e9 est\u00e1 embarazada o est\u00e1 criando"
+    }
+  },
+  {
+    "pk": 7,
+    "model": "calidad_vida.codigo",
+    "fields": {
+      "nombre": "7. No quiere"
+    }
+  },
+  {
+    "pk": 8,
+    "model": "calidad_vida.codigo",
+    "fields": {
+      "nombre": "No aplica"
+    }
+  },
+  {
+    "pk": 1,
+    "model": "calidad_vida.abastece",
+    "fields": {
+      "nombre": "1) Ca\u00f1er\u00eda en la casa"
+    }
+  },
+  {
+    "pk": 2,
+    "model": "calidad_vida.abastece",
+    "fields": {
+      "nombre": "2) Ca\u00f1er\u00eda en el patio"
+    }
+  },
+  {
+    "pk": 3,
+    "model": "calidad_vida.abastece",
+    "fields": {
+      "nombre": "3) Vecino le da agua"
+    }
+  },
+  {
+    "pk": 4,
+    "model": "calidad_vida.abastece",
+    "fields": {
+      "nombre": "4) Pozo propio"
+    }
+  },
+  {
+    "pk": 5,
+    "model": "calidad_vida.abastece",
+    "fields": {
+      "nombre": "5) Pozo comunal"
+    }
+  },
+  {
+    "pk": 6,
+    "model": "calidad_vida.abastece",
+    "fields": {
+      "nombre": "6) R\u00edo, ojo de agua"
+    }
+  },
+  {
+    "pk": 7,
+    "model": "calidad_vida.abastece",
+    "fields": {
+      "nombre": "7) Ojo de agua en propiedad ajena"
+    }
+  }
+]

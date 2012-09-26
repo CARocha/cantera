@@ -1,0 +1,100 @@
+[
+  {
+    "pk": 1,
+    "model": "crisis_alimentaria.estrategiacrisis",
+    "fields": {
+      "nombre": "1. Estrategia suave. Recibieron ayuda: del Gobierno, alcaldia, ONG, iglesias, cooperaci\u00f3n internacional, familiares"
+    }
+  },
+  {
+    "pk": 2,
+    "model": "crisis_alimentaria.estrategiacrisis",
+    "fields": {
+      "nombre": "2. Estrategia dura. Tuvieron que vender ganado, oro, otros bienes familiares (BK)"
+    }
+  },
+  {
+    "pk": 3,
+    "model": "crisis_alimentaria.estrategiacrisis",
+    "fields": {
+      "nombre": "3. Estrategia dura. Salieron a trabajar fuera de su comarca, propiedad, hogar o al extranjero"
+    }
+  },
+  {
+    "pk": 4,
+    "model": "crisis_alimentaria.estrategiacrisis",
+    "fields": {
+      "nombre": "4. Estrategia muy dura. Tuvieron que vender tierras, lotes, casas"
+    }
+  },
+  {
+    "pk": 5,
+    "model": "crisis_alimentaria.estrategiacrisis",
+    "fields": {
+      "nombre": "5. Estrategia muy dura. Se endeudaron (micro-financiera, prestamistas)"
+    }
+  },
+  {
+    "pk": 6,
+    "model": "crisis_alimentaria.estrategiacrisis",
+    "fields": {
+      "nombre": "Otra..."
+    }
+  },
+  {
+    "pk": 7,
+    "model": "crisis_alimentaria.estrategiacrisis",
+    "fields": {
+      "nombre": "No aplica"
+    }
+  },
+  {
+    "pk": 1,
+    "model": "crisis_alimentaria.credito",
+    "fields": {
+      "nombre": "1. No tiene. No recibe cr\u00e9dito"
+    }
+  },
+  {
+    "pk": 2,
+    "model": "crisis_alimentaria.credito",
+    "fields": {
+      "nombre": "2. Banca tradicional, micro financiera"
+    }
+  },
+  {
+    "pk": 3,
+    "model": "crisis_alimentaria.credito",
+    "fields": {
+      "nombre": "3. Cooperativa, proyectos, ONG"
+    }
+  },
+  {
+    "pk": 4,
+    "model": "crisis_alimentaria.credito",
+    "fields": {
+      "nombre": "4. Banquito comunal"
+    }
+  },
+  {
+    "pk": 5,
+    "model": "crisis_alimentaria.credito",
+    "fields": {
+      "nombre": "5. Comerciantes, prestamistas"
+    }
+  },
+  {
+    "pk": 6,
+    "model": "crisis_alimentaria.credito",
+    "fields": {
+      "nombre": "6. Otros"
+    }
+  },
+  {
+    "pk": 7,
+    "model": "crisis_alimentaria.credito",
+    "fields": {
+      "nombre": "7. No aplica"
+    }
+  }
+]
