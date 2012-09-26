@@ -1,0 +1,106 @@
+{% extends "base.html" %}
+{% load tools %}
+{% block extratitle %}Aguas clorada{% endblock %}
+
+{% block extrahead %}
+<script type="text/javascript" src="{{MEDIA_URL}}js/highcharts.js"></script>
+<script type="text/javascript" src="{{MEDIA_URL}}js/exporting_patched.js"></script>
+<script type="text/javascript">
+    var plotOptions = {
+         pie: {
+            allowPointSelect: true,
+            cursor: 'pointer',
+            dataLabels: {
+               enabled: false
+            },
+            series: {
+                    pointWidth: 35,
+                    minPointLength : 1
+                },
+            showInLegend: true
+         },
+         series: {
+            dataLabels: {
+                enabled: true,
+                align: "center",
+                formatter: function() {
+                    return ''+ this.percentage.toFixed(1) + ' %';
+                },
+                color: '#000',
+                style: {
+                    font: '12px Trebuchet MS, Verdana, sans-serif'
+                }
+            }
+        }
+    }
+    var tooltip = {
+        formatter: function() {
+            return '<b>'+ this.point.name +'</b>: '+ this.y;
+        }
+    }
+    
+   {%for value in tabla_mu%}
+       
+    $(document).ready(function(){
+    	var chart{{forloop.counter}} = new Highcharts.Chart({
+        	chart: {
+            	renderTo: 'grafo{{forloop.counter}}',
+                defaultSeriesType: 'pie',
+                height: 480,
+                width: 960
+            },
+            title: {
+                text: '{{value.0|truncate_init:5}}'
+            },
+            subtitle: {
+                text: '% de familias según quien toma las decisiones'
+            },                                
+            tooltip: tooltip,
+            plotOptions: plotOptions,
+            series: [{data: [{% for a,x in value.1.items %}['{{a}}',{{x}}]{% if not forloop.last %}, {% endif %}{% endfor %}]}]
+        });
+    });
+    {%endfor%}
+  
+</script>
+{% endblock %}
+
+{% block contenido %}
+{% include "encuestas/navegacion.html"%}
+<div class="title_bar">
+    <div class="titulo">Mujeres que toman decisiones</div>
+    <div class="titulo der"><a href="/consultarsimple/">&larr; Volver</a></div>
+</div>
+{% include "encuestas/filtros_seleccionados.html" %}
+<div>
+	<table class="tabla-resultados">
+	<caption>Quien toma decisiones en estos asuntos en familias con mujeres casadas</caption>
+	<thead>
+		<tr>		
+			<th>Tipos</th>
+			<th>No aplica</th>
+			<th>Ambos</th>
+			<th>Mujer</th>
+			<th>Varón</th>
+		</tr>
+	</thead>
+	<tbody>
+    	{%for value in tabla_mu %}
+    	<tr>
+                <td>{{value.0|truncate_init:5}}</td>
+                {%for a,x in value.1.items%}
+                <td>{{x}}</td>
+                {%endfor%}
+                
+        {%endfor%}
+	</tbody>
+	</table>
+	<div id="grafo1" class="grafo"></div>
+	<div id="grafo2" class="grafo"></div>
+	<div id="grafo3" class="grafo"></div>
+	<div id="grafo4" class="grafo"></div>
+	<div id="grafo5" class="grafo"></div>
+	<div id="grafo6" class="grafo"></div>
+</div>
+<br>
+{% endblock %}

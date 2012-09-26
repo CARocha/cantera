@@ -1,0 +1,120 @@
+{% extends "base.html" %}
+{% load tools %}
+{% block extratitle %}Familias que realizan prácticas de conservación de suelo y agua{% endblock %}
+
+{% block extrahead %}
+<script type="text/javascript" src="{{MEDIA_URL}}js/highcharts.js"></script>
+<script type="text/javascript" src="{{MEDIA_URL}}js/exporting_patched.js"></script>
+<script type="text/javascript">
+   var chart;
+$(document).ready(function() {
+   chart = new Highcharts.Chart({
+      chart: {
+         renderTo: 'sexo-jefe',
+         defaultSeriesType: 'column',
+         marginRight: 130,
+         marginBottom: 25
+      },
+      title: {
+         text: 'Prácticas de conservación de suelo y agua (CSA)',
+         x: -20 //center
+      },
+      subtitle: {
+         text: '% de familias que realizan CSA según sexo del jefe de familia',
+         x: -20
+      },
+      xAxis: {
+         categories: ['Total', 'Mujer jefa', 'Varón jefe']
+      },
+      yAxis: {
+         title: {
+            text: '%'
+         },
+         plotLines: [{
+            value: 0,
+            width: 1,
+            color: '#808080'
+         }]
+      },
+      tooltip: {
+         formatter: function() {
+                   return '<b>'+ this.series.name +'</b><br/>'+
+               this.x +': '+ this.y;
+         }
+      },
+      legend: {
+         layout: 'vertical',
+         align: 'right',
+         verticalAlign: 'top',
+         x: 0,
+         y: 100,
+         borderWidth: 0
+      },
+      plotOptions: {
+                column: {
+                    groupPadding: 0,
+                    pointPadding: 0.9,
+                    borderWidth: 0
+                },
+                series: {
+                    pointWidth: 35,
+                    minPointLength : 1
+                }
+            },
+      series: [{
+         name: '% de familias que hace CSA',
+         data: [{{por_total_h_m}},{{por_mujer}},{{por_hombre}}]
+      }]
+   });
+   
+   
+});
+</script>
+{% endblock %}
+
+{% block contenido %}
+{% include "encuestas/navegacion.html"%}
+<div class="title_bar">
+    <div class="titulo">Conservación de Suelo y Agua</div>
+    <div class="titulo der"><a href="/consultarsimple/">&larr; Volver</a></div>
+</div>
+{% include "encuestas/filtros_seleccionados.html" %}
+<div>
+	<table class="tabla-resultados">
+	<caption>Porcentaje de familias con prácticas de conservación de suelo y agua (CSA)</caption>
+	<thead>
+		<tr>	
+		    <th>Tipo</th>	
+			<th>Total ({{total}})</th>
+			<th>%</th>
+			<th>Mujer jefa ({{mujer_jefes}})</th>
+			<th>%</th>
+			<th>Varón jefe ({{hombre_jefes}})</th>
+			<th>%</th>
+		</tr>
+	</thead>
+	<tbody>
+	    <tr>
+		    <td>Si CSA</td>
+			<td>{{total_h_m}}</td>
+			<td>{{por_total_h_m}}</td>
+			<td>{{mujer}}</td>
+			<td>{{por_mujer}}</td>
+			<td>{{hombre}}</td>
+			<td>{{por_hombre}}</td>
+		</tr>
+		<tr>
+		    <td>No CSA</td>
+			<td>{{no_total}}</td>
+			<td>{{por_no_total}}</td>
+			<td>{{no_mujer}}</td>
+			<td>{{por_no_mujer}}</td>
+			<td>{{no_hombre}}</td>
+			<td>{{por_no_hombre}}</td>
+		</tr>
+	</tbody>
+	</table>
+	<div id="sexo-jefe" class="grafo"></div>
+</div>
+<br>
+{% endblock %}

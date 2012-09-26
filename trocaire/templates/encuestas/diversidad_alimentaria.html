@@ -1,0 +1,138 @@
+{% extends "base.html" %}
+{% load tools %}
+{% block extratitle %}{{titulo}}{% endblock %}
+
+{% block extrahead %}
+<script type="text/javascript" src="{{MEDIA_URL}}js/highcharts.js"></script>
+<script type="text/javascript" src="{{MEDIA_URL}}js/exporting_patched.js"></script>
+<script type="text/javascript">
+    var plotOptions = {
+        column: {            
+            borderWidth: 0,
+            pointPadding: 0.2
+        },
+        series: {
+            pointWidth: 12,            
+            dataLabels: {
+                enabled: true,
+                align: "center",
+                formatter: function() {
+                    return ''+ this.y.toFixed(0) +' %';
+                },
+                color: '#000',
+                style: {
+                    font: '12px Trebuchet MS, Verdana, sans-serif'
+                }
+            }
+        }
+    }
+    var tooltip = {
+        formatter: function() {
+            return ''+
+                '<b>' + this.series.name + ' '+ this.x +':</b> '+ this.y;
+        }
+    }
+    var leyenda = {
+        layout: 'horizontal',
+        align: 'center',
+        verticalAlign: 'bottom',
+        shadow: true
+    }    
+    $(document).ready(function() {
+            var chart = new Highcharts.Chart({
+                chart: {
+                    renderTo: 'grafo',
+                    defaultSeriesType: 'column',
+                    height: 480,
+                    width: 960
+                },
+                title: {
+                    text: '{{titulo}}'
+                },
+                subtitle: {
+                    text: 'Gráfico basado en frecuencias acumuladas'
+                },
+                xAxis: {
+                    categories: [
+                        {% for value in labels.values %}'{{value}}'{% if not forloop.last %}, {% endif %}{% endfor %}
+                    ]
+                },
+                yAxis: {
+                    min: 0,
+                    title: {
+                        text: 'Porcentajes'
+                    }
+                },
+                legend: leyenda,
+                tooltip: tooltip,
+                plotOptions: plotOptions,
+                series: [{name: 'Total', data: [{% for key, value in dicc.items %}{% with acumulada=dicc.values|frec_acumul:forloop.counter0 %}{{acumulada|calcular_frecuencia:total}}{% endwith %}, {% endfor %}]},
+                		{name: 'Hombre Jefe', data: [{% for key, value in dicc_hombre.items %}{% with acumulada=dicc_hombre.values|frec_acumul:forloop.counter0 %}    				
+        				{{acumulada|calcular_frecuencia:total_hombre}}				
+        				{% endwith %}, {% endfor %}]},
+                		{name: 'Mujer Jefa', data: [{% for key, value in dicc_mujer.items %}{% with acumulada=dicc_mujer.values|frec_acumul:forloop.counter0 %}       				
+        				{{acumulada|calcular_frecuencia:total_mujer}}				
+        				{% endwith %}, {% endfor %}]}
+                ]
+            });
+    });
+</script>
+{% endblock %}
+
+{% block contenido %}
+{% include "encuestas/navegacion.html"%}
+<div class="title_bar">
+    <div class="titulo">{{titulo}}</div>
+    <div class="titulo der"><a href="/consultarsimple/">&larr; Volver</a></div>
+</div>
+<div class="contraparts">
+{% include "encuestas/filtros_seleccionados.html" %}
+</div>
+<div>
+	<table class="tabla-resultados">
+	<caption>{{titulo}}</caption>
+	<thead>
+		<tr>
+			<th rowspan="2">Grupos</th>
+			<th colspan="3">Total Familias</th>
+			<th colspan="3">Familias con jefes hombres</th>
+			<th colspan="3">Familias con mujeres jefas</th>
+		</tr>
+		<tr>			
+			<th>Frecuencia Simple</th>
+			<th>Frecuencia Acumulada</th>			
+			<th>%</th>
+			<th>Frecuencia Simple</th>
+			<th>Frecuencia Acumulada</th>			
+			<th>%</th>
+			<th>Frecuencia Simple</th>
+			<th>Frecuencia Acumulada</th>			
+			<th>%</th>			
+		</tr>		
+	</thead>
+		<tbody>
+			{% for key, value in dicc.items %}
+			<tr>
+				<td>{{labels|get_value:key}}</td>
+				<td>{{value}}</td>
+				{% with acumulada=dicc.values|frec_acumul:forloop.counter0 %}
+				<td>{{acumulada}}</td>
+				<td>{{acumulada|calcular_frecuencia:total}}</td>				
+				{% endwith %}
+				<td>{{dicc_hombre|get_value:key}}</td>				
+				{% with acumulada=dicc_hombre.values|frec_acumul:forloop.counter0 %}
+				<td>{{acumulada}}</td>
+				<td>{{acumulada|calcular_frecuencia:total_hombre}}</td>				
+				{% endwith %}				
+				<td>{{dicc_mujer|get_value:key}}</td>		
+				{% with acumulada=dicc_mujer.values|frec_acumul:forloop.counter0 %}
+				<td>{{acumulada}}</td>
+				<td>{{acumulada|calcular_frecuencia:total_mujer}}</td>				
+				{% endwith %}	
+			</tr>
+			{% endfor %}
+		</tbody>
+	</table>	
+	<div id="grafo" class="grafo"></div>
+</div>
+{% endblock %}

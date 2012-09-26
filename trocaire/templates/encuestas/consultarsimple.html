@@ -1,0 +1,155 @@
+{% extends "base.html" %}
+{% block extratitle %}Consultas Simples{% endblock %}
+
+{%block extrahead%}
+<script type="text/javascript">
+    $(document).ready(function() {
+        var departamento = document.getElementById("id_departamento");
+        var municipio = document.getElementById("id_municipio");
+        var comarca = document.getElementById("id_comarca");
+        
+        //municipios
+        $("#id_departamento").change(function () {
+            var index = departamento.options.selectedIndex;
+            var id = departamento.options[index].value;
+            $.getJSON("/consultar/ajax/municipio/" + id +"/",
+            function(data){
+                municipio.options.length = 0;
+                municipio.options[0] = new Option("--------");
+                for(i=0; i< data.length; i++){
+                    municipio.options[i+1] = new Option(data[i][1], data[i][0]);
+                }
+            });
+        });
+        
+        //comarca
+        $("#id_municipio").change(function () {
+            var index = municipio.options.selectedIndex;
+            var id = municipio.options[index].value;
+            $.getJSON("/consultar/ajax/comarca/" + id +"/",
+            function(data){
+                comarca.options.length = 0;
+                comarca.options[0] = new Option("---------");
+                for(i=0; i< data.length; i++){
+                    comarca.options[i+1] = new Option(data[i][1], data[i][0]);
+                }
+            });
+        });
+        
+    });
+</script>
+<style type="text/css">
+.hidden{
+	visibility: hidden;
+}
+</style>
+{% endblock %}
+
+
+{% block contenido %}
+<div style="float:left;">  
+    <form method="POST" action="." id="consultar-form">{% csrf_token %}
+        <div class="general">
+            <div class="columnaform">
+                <div class="label">{{form.fecha.label}}</div>
+                <div class="filtros">{{form.fecha}}<br>{{form.fecha.errors}}</div>
+                <div class="clean"></div>
+                <div class="label">{{form.contraparte.label}}</div>
+                <div class="filtros">{{form.contraparte}}<br>{{form.contraparte.errors}}</div>
+                <div class="clean"></div>
+                <div class="label">{{form.departamento.label}}</div>
+                <div class="filtros">{{form.departamento}}<br>{{form.departamento.errors}}</div>
+                <div class="clean"></div>
+                <div class="label">{{form.municipio.label}}</div>
+                <div class="filtros">{{form.municipio}}<br>{{form.municipio.errors}}</div>
+                <div class="clean"></div>
+                <div class="label">{{form.comarca.label}}</div>
+                <div class="filtros">{{form.comarca}}<br>{{form.comarca.errors}}</div> 
+                <div class="clean"></div>    
+            <div class="label hidden">{{form.escolaridad_beneficiario.label}}</div>
+            <div class="filtros hidden">{{form.escolaridad_beneficiario}}<br>{{form.escolaridad_beneficiario.errors}}</div>                
+            <div class="label hidden">{{form.escolaridad_conyugue.label}}</div>
+            <div class="filtros hidden">{{form.escolaridad_conyugue}}<br>{{form.escolaridad_conyugue.errors}}</div>
+            <div class="clean"></div>
+        </div>
+        <div class="columnaform hidden"><br>
+            <div class="label">{{form.dependientes_max.label}}</div>
+            <div class="filtros">{{form.dependientes_max}}<br>{{form.dependientes_max.errors}}</div>
+            <div class="filtros">{{form.dependientes_min}}<br>{{form.dependientes_min.errors}}</div>
+            <div class="clean"></div>
+            <div class="label">{{form.familia_beneficiario.label}}</div>
+            <div class="filtros">{{form.familia_beneficiario}}<br>{{form.familia_beneficiario.errors}}</div>
+            <div class="clean"></div>
+            <div class="label">{{form.credito_acceso.label}}</div>
+            <div class="filtros">{{form.credito_acceso}}<br>{{form.credito_acceso.errors}}</div>
+            <div class="clean"></div>
+            <div class="label">{{form.desicion_gasto_mayor.label}}</div>
+            <div class="filtros">{{form.desicion_gasto_mayor}}<br>{{form.desicion_gasto_mayor.errors}}</div>
+            <div class="clean"></div>
+            <div class="label">{{form.desicion_inversion.label}}</div>
+            <div class="filtros">{{form.desicion_inversion}}<br>{{form.desicion_inversion.errors}}</div>
+            <div class="clean"></div>
+            </div>
+            <div class="clean"></div>
+            <input type="submit" value=""  class="consultar"/>
+        <div class="clean"></div>
+        </div>        
+    </form>
+</div>
+{%if muestra_indicador = 1%}
+<div id="bloqueindicadores">
+    <div class="indicadorcategoria">FAMILIAS</div>
+        <a href="/encuestas/datos-x-sexo/">Sexo jefe de familia</a>
+        <a href="/encuestas/sexo-beneficiario/">Sexo de beneficiario/a y jefatura de familia</a>
+        <a href="/encuestas/escolaridad/">Escolaridad de beneficiario/a</a>
+        {% if request.session.fecha == '2010' %}
+        <a href="/encuestas/dependencia/">Dependencia familiar</a>
+        {%endif%}
+        <div class="clean"></div>
+    <div class="indicadorcategoria">INGRESOS FAMILIARES</div>
+        {% if request.session.fecha == '2010' %}
+        <a href="/encuestas/credito/">Acceso a crédito </a>
+        {%endif%}
+        <a href="/encuestas/ingreso-agropecuario/">% de Familias con Ingresos Agropecuarios</a>
+        <a href="/encuestas/ingreso-familiar-agropecuario/">Ingresos Familiares Agropecuarios</a>
+        <a href="/encuestas/ingreso-familiar/">Ingresos Familiares</a>
+        <div class="clean"></div>
+        
+    <div class="indicadorcategoria">SEGURIDAD ALIMENTARIA</div>
+        <a href="/encuestas/abastecimiento/">Autoabastecimiento de granos básicos</a>
+        <a href="/encuestas/diversidad-alimentaria/">Diversidad de la dieta</a>
+        <div class="clean"></div>
+        
+    <div class="indicadorcategoria">PROCESAMIENTO Y MERCADOS</div>
+        <a href="/encuestas/venta-organizada/">Venta organizada</a>
+        <a href="/encuestas/familias-venden/">Familias que venden</a>
+        <a href="/encuestas/procesando-productos/">Familias que venden procesados</a>
+        <div class="clean"></div>
+        
+    <div class="indicadorcategoria">PRODUCCIÓN SOSTENIBLE</div>
+        {% if request.session.fecha == '2010' %}
+        <a href="/encuestas/familias-practicas/">Conservación de suelo y agua</a>
+        {%endif%}
+        <a href="/encuestas/diversificacion-productiva/">Diversificación productiva</a>
+        <a href="/encuestas/tecnologia-agricola/">Uso de tecnología orgánica</a>
+        <div class="clean"></div>
+    {% if request.session.fecha == '2010' %}    
+    <div class="indicadorcategoria">ACCESO A TIERRA Y AGUA</div>
+        <a href="/encuestas/agua-clorada/">Agua segura</a>
+        <a href="/encuestas/gastan-horas/">Tiempo de recolección de agua</a>
+        <a href="/encuestas/acceso-agua/">Acceso a riego</a>
+        <a href="/encuestas/acceso-tierra/">Acceso a tierra</a>
+        <div class="clean"></div>
+          
+    <div class="indicadorcategoria">GENERO Y PARTICIPACIÓN</div>
+        <a href="/encuestas/participacion/">Participación Ciudadana</a>
+        <a href="{% url hombre_responsable %}">hombres hacen tareas domésticas</a>
+        <a href="{% url mujeres_decisiones %}">Mujeres toman decisiones</a><br>
+        <div class="clean"></div>
+    {% endif %} 
+
+</div>
+{% endif %}
+<div class="clean"></div>
+<br>
+{% endblock %}

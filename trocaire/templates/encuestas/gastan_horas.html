@@ -1,0 +1,102 @@
+{% extends "base.html" %}
+{% load tools %}
+{% block extratitle %}Familias gastan más de una hora para recolectar agua{% endblock %}
+
+{% block extrahead %}
+<script type="text/javascript" src="{{MEDIA_URL}}js/highcharts.js"></script>
+<script type="text/javascript" src="{{MEDIA_URL}}js/exporting_patched.js"></script>
+<script type="text/javascript">
+   var chart;
+$(document).ready(function() {
+   chart = new Highcharts.Chart({
+      chart: {
+         renderTo: 'sexo-jefe',
+         defaultSeriesType: 'column',
+         
+      },
+      title: {
+         text: '% familas que gastan más de una hora para recolectar agua',
+      },
+      subtitle: {
+         text: '% de familias según sexo del jefe de familia',
+      },
+      xAxis: {
+         categories: ['Total', 'Mujer', 'Varón']
+      },
+      yAxis: {
+                min: 0,
+                title: {
+                    text: '%'
+                }
+            },
+      tooltip: {
+         formatter: function() {
+                   return '<b>'+ this.series.name +'</b><br/>'+
+               this.x +': '+ this.y;
+         }
+      },
+      plotOptions: {
+                column: {
+                    groupPadding: 0,
+                    pointPadding: 0.9,
+                    borderWidth: 0
+                },
+                series: {
+                    pointWidth: 55,
+                    minPointLength : 1
+                }
+            },
+      series: [{
+         name: '% de familas que gastan más de una hora para recolectar agua',
+         data: [{{tablas_gastan.porcentaje_total}}, {{tablas_gastan.porcentaje_femenino}}, {{tablas_gastan.porcentaje_masculino}}],
+         dataLabels: {
+                        enabled: true,
+                        rotation: 0,
+                        color: '#632D00',
+                        align: 'center',
+                        x: -3,
+                        y: 0,
+                            formatter: function() {
+                                return this.y + '%';
+                                                  },
+                        style: {
+                            font: 'normal 13px Verdana, sans-serif'
+                                }
+                                }
+      }]
+   });
+   
+   
+});
+</script>
+{% endblock %}
+
+{% block contenido %}
+{% include "encuestas/navegacion.html"%}
+<div class="title_bar">
+    <div class="titulo">Tiempo para recolección de agua</div>
+    <div class="titulo der"><a href="/consultarsimple/">&larr; Volver</a></div>
+</div>
+{% include "encuestas/filtros_seleccionados.html" %}
+<div>
+	<table class="tabla-resultados">
+	<caption>Porcentaje % de familas que gastan más de una hora para recolectar agua</caption>
+	<thead>
+		<tr>		
+			<th>Total ({{numero}})</th>
+			<th>Mujer jefa ({{mujer_jefes}})</th>
+			<th>Varón jefe ({{hombre_jefes}})</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td>({{tablas_gastan.total}}) - {{tablas_gastan.porcentaje_total}}%</td>
+			<td>({{tablas_gastan.femenino}}) - {{tablas_gastan.porcentaje_femenino}}%</td>
+			<td>({{tablas_gastan.masculino}}) - {{tablas_gastan.porcentaje_masculino}}%</td>
+		</tr>
+	</tbody>
+	</table>
+	<div id="sexo-jefe" class="grafo"></div>
+</div>
+<br>
+{% endblock %}

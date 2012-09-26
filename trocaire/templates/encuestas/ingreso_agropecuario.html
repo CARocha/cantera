@@ -1,0 +1,114 @@
+{% extends "base.html" %}
+{% load tools %}
+{% block extratitle %}Ingresos por actividades agropecuarias{% endblock %}
+
+{% block extrahead %}
+<script type="text/javascript" src="{{MEDIA_URL}}js/highcharts.js"></script>
+<script type="text/javascript" src="{{MEDIA_URL}}js/exporting_patched.js"></script>
+<script type="text/javascript">
+    var plotOptions = {
+        column: {
+            groupPadding: 0,
+            pointPadding: 0.9,
+            borderWidth: 0
+        },
+        series: {
+            pointWidth: 25,
+            minPointLength : 0.5,
+            dataLabels: {
+                enabled: true,
+                align: "center",
+                formatter: function() {
+                    return ''+ this.y + ' %';
+                },
+                color: '#000',
+                style: {
+                    font: '12px Trebuchet MS, Verdana, sans-serif'
+                }
+            }
+        }
+    }
+    var tooltip = {
+        formatter: function() {
+            return ''+
+                this.series.name +': '+ this.y +'%';
+        }
+    }
+    var leyenda = {
+        layout: 'horizontal',
+        align: 'center',
+        verticalAlign: 'bottom',
+        shadow: true
+    }    
+    $(document).ready(function() {
+            var chart = new Highcharts.Chart({
+                chart: {
+                    renderTo: 'grafo',
+                    defaultSeriesType: 'column',
+                    height: 480,
+                    width: 960
+                },
+                title: {
+                    text: 'Ingresos familiares por actividades agropecuarias'
+                },
+                subtitle: {
+                    text: '% de familias con ingresos agropecuarios según sexo del jefe de familia'
+                },
+                xAxis: {
+                    categories: [
+                        'Grupo jefe'
+                    ]
+                },
+                yAxis: {
+                    min: 0,
+                    title: {
+                        text: 'Porcentajes'
+                    }
+                },
+                legend: leyenda,
+                tooltip: tooltip,
+                plotOptions: plotOptions,
+                series: [{name: 'Total', data: [{{ingreso_agropecuario.total|calcular_frecuencia:query.count}}]},
+                         {name: 'Hombre Jefe', data: [{{ingreso_agropecuario.hombre|calcular_frecuencia:query_hombre.count}}]},
+                         {name: 'Mujer Jefe', data: [{{ingreso_agropecuario.mujer|calcular_frecuencia:query_mujer.count}}]}]
+            });
+    });
+</script>
+{% endblock %}
+
+{% block contenido %}
+{% include "encuestas/navegacion.html"%}
+<div class="title_bar">
+    <div class="titulo">Ingresos familiares por actividades agropecuarias</div>
+    <div class="titulo der"><a href="/consultarsimple/">&larr; Volver</a></div>
+</div>
+{% include "encuestas/filtros_seleccionados.html" %}
+<div>
+	<table class="tabla-resultados">
+	<caption>Ingresos familiares por actividades agropecuarias</caption>
+	<thead>
+		<tr>
+			<th>&nbsp;</th>
+			<th>Total</th>
+			<th>%</th>
+			<th>Hombre Jefe</th>
+			<th>%</th>
+			<th>Mujere Jefe</th>			
+			<th>%</th>
+		</tr>
+	</thead>
+		<tbody>			
+			<tr>
+				<td>Porcentaje de familias con ingresos agropecuarios</td>
+				<td>{{ingreso_agropecuario.total}}</td>
+				<td>{{ingreso_agropecuario.total|calcular_frecuencia:query.count}}</td>
+				<td>{{ingreso_agropecuario.hombre}}</td>
+				<td>{{ingreso_agropecuario.hombre|calcular_frecuencia:query_hombre.count}} %</td>
+				<td>{{ingreso_agropecuario.mujer}}</td>
+				<td>{{ingreso_agropecuario.mujer|calcular_frecuencia:query_mujer.count}} %</td>											
+			</tr>			
+		</tbody>
+	</table>
+	<div id="grafo" class="grafo"></div>
+</div>
+{% endblock %}

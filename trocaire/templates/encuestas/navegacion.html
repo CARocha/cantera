@@ -1,0 +1,126 @@
+{% block extrahead %}
+<script src="{{MEDIA_URL}}js/2leveltab.js" type="text/javascript"></script>
+<link type="text/css" rel="stylesheet"  href="{{MEDIA_URL}}css/2leveltab.css" >
+
+{%endblock%}
+{% block navegacion %}
+<ul id="maintab" class="basictab">
+    {%if dondetoy = 'sexojefe' or dondetoy = 'sexobene' or dondetoy = 'escolaridad' or dondetoy = 'dependencia'%}
+    <li class="selected" rel="familias"><a href="#">FAMILIAS &#9660;</a></li>
+    {%else%}
+    <li rel="familias"><a href="#">FAMILIAS &#9660;</a></li>
+    {%endif%}
+    
+    {%if dondetoy = 'creditofamilia' or dondetoy = 'actividadesagro' or dondetoy = 'ingresosfam' or dondetoy = 'ingresofamap' %}
+    <li class="selected" rel="ingresos"><a href="#">INGRESOS &#9660;</a></li>
+    {%else%}
+    <li rel="ingresos"><a href="#">INGRESOS &#9660;</a></li>
+    {%endif%}
+
+    {%if  dondetoy = 'autoabastecimiento' or dondetoy = 'diversidad_ali'%}
+    <li class="selected" rel="seguridad"><a href="#">SEGURIDAD ALIMENTARIA &#9660;</a></li>
+    {%else%}
+    <li rel="seguridad"><a href="#">SEGURIDAD ALIMENTARIA &#9660;</a></li>
+    {%endif%}
+
+    {%if  dondetoy = 'venta_org' or dondetoy = 'procesando_prod' or dondetoy = 'familias_venden'%}
+    <li class="selected" rel="procesamiento"><a href="#">PROCESAMIENTO Y MERCADOS &#9660;</a></li>
+    {%else%}
+    <li rel="procesamiento"><a href="#">PROCESAMIENTO Y MERCADOS &#9660;</a></li>
+    {%endif%}
+
+    {%if  dondetoy = 'conservacion' or dondetoy = 'tecnologia' or dondetoy = 'div_produc'%}
+    <li class="selected" rel="produccion"><a href="#">PRODUCCIÓN SOSTENIBLE &#9660;</a></li>
+    {%else%}
+    <li rel="produccion"><a href="#">PRODUCCIÓN SOSTENIBLE &#9660;</a></li>
+    {%endif%}
+
+    {%if dondetoy = 'cloran'  or dondetoy = 'recolectar' or dondetoy = 'accesoagua' or dondetoy = 'accesotierra'%}
+    {% if request.session.fecha == '2010' %}
+    <li class="selected" rel="acceso"><a href="#">ACCESO A TIERRA &#9660;</a></li>
+    {%endif%}
+    {%else%}
+    {% if request.session.fecha == '2010' %}
+    <li  rel="acceso"><a href="#">ACCESO A TIERRA &#9660;</a></li>
+    {%endif%}
+    {%endif%}
+    {%if  dondetoy = 'participacion' or dondetoy = "hombreresp" or dondetoy = "mujeresdecision"%}
+    {% if request.session.fecha == '2010' %}
+    <li class="selected" rel="genero"><a href="#">GENERO &#9660;</a></li>
+    {%endif%}
+    {%else%}
+    {% if request.session.fecha == '2010' %}
+    <li rel="genero"><a href="#">GENERO &#9660;</a></li>
+    {%endif%}
+    {%endif%}
+</ul>
+
+
+<div id="familias" class="submenustyle">
+    <a {%ifequal dondetoy 'sexojefe'%}class="activa"{%endifequal%} href="/encuestas/datos-x-sexo/">Sexo Jefe de familia</a>
+    <a {%ifequal dondetoy 'sexobene'%}class="activa"{%endifequal%} href="/encuestas/sexo-beneficiario/">Sexo de beneficiario/a y jefatura de familia</a>
+    <a {%ifequal dondetoy 'escolaridad'%}class="activa"{%endifequal%} href="/encuestas/escolaridad/">Escolaridad de beneficiario/a</a>
+    {% if request.session.fecha == '2010' %}
+    <a {%ifequal dondetoy 'dependencia'%}class="activa"{%endifequal%} href="/encuestas/dependencia/">Dependencia familiar</a>
+    {%endif%}
+</div>
+
+<div id="ingresos" class="submenustyle">
+    {% if request.session.fecha == '2010' %}
+    <a {%ifequal dondetoy 'creditofamilia'%}class="activa"{%endifequal%}  href="/encuestas/credito/">Acceso a crédito</a>
+    {%endif%}
+    <a {%ifequal dondetoy 'actividadesagro'%}class="activa"{%endifequal%}  href="/encuestas/ingreso-agropecuario/">% de Fam. c. Ingresos agropecuarios</a>
+    <a {%ifequal dondetoy 'ingresofamap'%}class="activa"{%endifequal%} href="/encuestas/ingreso-familiar-agropecuario/">Ingresos Familiares Agropecuarios</a>
+    <a {%ifequal dondetoy 'ingresosfam'%}class="activa"{%endifequal%} href="/encuestas/ingreso-familiar/">Ingresos Familiares</a>
+</div>
+
+<div id="seguridad" class="submenustyle">
+    <a {%ifequal dondetoy 'autoabastecimiento'%}class="activa"{%endifequal%} href="/encuestas/abastecimiento/">Autoabastecimiento de granos básicos</a>
+    <a {%ifequal dondetoy 'diversidad_ali'%}class="activa"{%endifequal%} href="/encuestas/diversidad-alimentaria/">Diversidad de la dieta</a>
+</div>
+
+<div id="procesamiento" class="submenustyle">
+    <a {%ifequal dondetoy 'venta_org'%}class="activa"{%endifequal%} href="/encuestas/venta-organizada/">Venta organizada</a>
+    <a {%ifequal dondetoy 'familias_venden'%}class="activa"{%endifequal%} href="/encuestas/familias-venden/">Familias que venden</a>
+    <a {%ifequal dondetoy 'procesando_prod'%}class="activa"{%endifequal%} href="/encuestas/procesando-productos/">Familias que venden procesados</a>
+</div>
+
+<div id="produccion" class="submenustyle">
+    {% if request.session.fecha == '2010' %}
+    <a {%ifequal dondetoy 'conservacion'%}class="activa"{%endifequal%} href="/encuestas/familias-practicas/">Conservación de suelo y agua</a>
+    {%endif%}
+    <a {%ifequal dondetoy 'div_produc'%}class="activa"{%endifequal%} href="/encuestas/diversificacion-productiva/">Diversificación productiva</a>    
+    <a {%ifequal dondetoy 'tecnologia'%}class="activa"{%endifequal%} href="/encuestas/tecnologia-agricola/">Uso de tecnología orgánica</a>
+</div>
+{% if request.session.fecha == '2010' %}
+<div id="acceso" class="submenustyle">
+    
+    <a {%ifequal dondetoy 'cloran'%}class="activa"{%endifequal%} href="/encuestas/agua-clorada/">Agua segura</a>
+    <a {%ifequal dondetoy 'recolectar'%}class="activa"{%endifequal%} href="/encuestas/gastan-horas/">Tiempo de recolección de agua</a>
+
+    <a {%ifequal dondetoy 'accesotierra'%}class="activa"{%endifequal%} href="/encuestas/acceso-tierra/">Acceso a tierra</a>
+    <a {%ifequal dondetoy 'accesoagua'%}class="activa"{%endifequal%} href="/encuestas/acceso-agua/">Acceso a riego</a>
+</div>
+
+<div id="genero" class="submenustyle">
+    <a {%ifequal dondetoy 'participacion'%}class="activa"{%endifequal%} href="/encuestas/participacion/">Participación ciudadana</a>
+    <a {%ifequal dondetoy 'hombreresp'%}class="activa"{%endifequal%} href="/encuestas/hombre-responsable/">hom. tareas domésticas</a>
+    <a {%ifequal dondetoy 'mujeresdecision'%}class="activa"{%endifequal%} href="/encuestas/mujer-decicion/">Mujeres toman decisiones</a>
+
+</div>
+{%endif%}
+<script type="text/javascript">
+//initialize tab menu, by passing in ID of UL
+initalizetab("maintab")
+</script>
+<script type="text/javascript">
+$(window).load(function () {
+    $('.basictab li').click(function(){
+        $('.basictab li').each(function(){
+            $(this).removeClass('selected');
+        });
+        $(this).addClass('selected');
+    });
+});
+</script>
+{%endblock%}

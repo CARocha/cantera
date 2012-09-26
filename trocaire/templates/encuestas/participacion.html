@@ -1,0 +1,220 @@
+{% extends "base.html" %}
+{% load tools %}
+{% block extratitle %}Participación de la Familia{% endblock %}
+
+{% block extrahead %}
+<script type="text/javascript" src="{{MEDIA_URL}}js/highcharts.js"></script>
+<script type="text/javascript" src="{{MEDIA_URL}}js/exporting_patched.js"></script>
+<script type="text/javascript">
+    var plotOptions = {
+         pie: {
+            allowPointSelect: true,
+            cursor: 'pointer',
+            dataLabels: {
+               enabled: false
+            },
+            showInLegend: true
+         },
+         series: {
+            dataLabels: {
+                enabled: true,
+                align: "center",
+                formatter: function() {
+                    return ''+ this.y + ' %';
+                },
+                color: '#000',
+                style: {
+                    font: '12px Trebuchet MS, Verdana, sans-serif'
+                }
+            }
+        }
+    }
+    var tooltip = {
+        formatter: function() {
+            return '<b>'+ this.series.name +'</b>: '+ this.y + '%';
+        }
+    }
+    $(document).ready(function(){
+    	var chart = new Highcharts.Chart({
+    		chart: {
+                renderTo: 'grafo-cpc',
+                defaultSeriesType: 'column',
+                height: 480,
+                width: 960
+            },
+            title: {
+                text: 'Hombre, Mujer, Ambos, No Participa'
+            },
+            xAxis: {
+                categories: [
+                    'Total', 'Hombre Jefe', 'Mujer Jefa'
+                ]
+            },
+            yAxis: {
+                min: 0,
+                title: {
+                    text: 'Porcentaje'
+                }
+            },
+            subtitle: {
+                text: '% de  familias según sexo de quien participa'
+            },                                
+            tooltip: tooltip,
+            plotOptions: plotOptions,
+            series: [{name: 'Participan los hombres', data: [{{part_cpc.hombre|calcular_frecuencia:total_general}}, 
+                                                           {{part_cpc_hombre.hombre|calcular_frecuencia:hombre_jefe}},
+                                                           {{part_cpc_mujer.hombre|calcular_frecuencia:mujer_jefe}}]},
+                     {name: 'Participan las mujeres', data: [{{part_cpc.mujer|calcular_frecuencia:total_general}}, 
+                                                         {{part_cpc_hombre.mujer|calcular_frecuencia:hombre_jefe}},
+                                                         {{part_cpc_mujer.mujer|calcular_frecuencia:mujer_jefe}}]},
+                     {name: 'Participan ambos', data: [{{part_cpc.ambos|calcular_frecuencia:total_general}}, 
+                                                         {{part_cpc_hombre.ambos|calcular_frecuencia:hombre_jefe}},
+                                                         {{part_cpc_mujer.ambos|calcular_frecuencia:mujer_jefe}}]},
+                     {name: 'No participan', data: [{% with nopart=encuestas.count|restar:part_cpc.total %}{{nopart|calcular_frecuencia:encuestas.count}}{% endwith %},
+                                                    {% with nopart=hombre_jefe|restar:part_cpc_hombre.total %}{{nopart|calcular_frecuencia:hombre_jefe}}{% endwith %},
+                                                    {% with nopart=mujer_jefe|restar:part_cpc_mujer.total %}{{nopart|calcular_frecuencia:mujer_jefe}}{% endwith %}
+                                                    ]}]
+                                                       
+        }); 
+    	var chart2 = new Highcharts.Chart({
+        	chart: {
+            	renderTo: 'grafo-asam',
+                defaultSeriesType: 'column',
+                height: 480,
+                width: 960
+            },
+            title: {
+                text: 'Participación de los miembros de la familia en Asambleas Comunitarias'
+            },
+            subtitle: {
+            	text: '% de familias según sexo de quien participa'
+            },
+            xAxis: {
+                categories: [
+                    'Total', 'Hombre Jefe', 'Mujer Jefa'
+                ]
+            },
+            yAxis: {
+                min: 0,
+                title: {
+                    text: 'Porcentaje'
+                }
+            },
+            tooltip: tooltip,
+            plotOptions: plotOptions,
+            series: [{name: 'Participan los hombres', data: [{{part_asam.hombre|calcular_frecuencia:encuestas.count}}, 
+                                                             {{part_asam_hombre.hombre|calcular_frecuencia:hombre_jefe}},
+                                                             {{part_asam_mujer.hombre|calcular_frecuencia:mujer_jefe}}]},
+                       {name: 'Participan las mujeres', data: [{{part_asam.mujer|calcular_frecuencia:total_general}}, 
+                                                           {{part_asam_hombre.mujer|calcular_frecuencia:hombre_jefe}},
+                                                           {{part_asam_mujer.mujer|calcular_frecuencia:mujer_jefe}}]},
+                       {name: 'Participan ambos', data: [{{part_asam.ambos|calcular_frecuencia:total_general}}, 
+                                                           {{part_asam_hombre.ambos|calcular_frecuencia:hombre_jefe}},
+                                                           {{part_asam_mujer.ambos|calcular_frecuencia:mujer_jefe}}]},
+                       {name: 'No participan', data: [{% with nopart=encuestas.count|restar:part_asam.total %}{{nopart|calcular_frecuencia:encuestas.count}}{% endwith %},
+                                                      {% with nopart=hombre_jefe|restar:part_asam_hombre.total %}{{nopart|calcular_frecuencia:hombre_jefe}}{% endwith %},
+                                                      {% with nopart=mujer_jefe|restar:part_asam_mujer.total %}{{nopart|calcular_frecuencia:mujer_jefe}}{% endwith %}
+                                                      ]}]
+        });
+    });
+</script>
+{% endblock %}
+
+{% block contenido %}
+{% include "encuestas/navegacion.html"%}
+<div class="title_bar">
+    <div class="titulo">Participación Ciudadana de la Familia</div>
+    <div class="titulo der"><a href="/consultarsimple/">&larr; Volver</a></div>
+</div>
+{% include "encuestas/filtros_seleccionados.html" %}
+<div>
+<table class="tabla-resultados">
+<caption>Participación de los miembros de la familia en los Comités de Poder Ciudadano (CPC)</caption>
+	<thead>	
+		<tr>
+			<th>Quien participa</th>
+			<th>Todos: {{encuestas.count}}</th>
+			<th>%</th>
+			<th>Hombre Jefe: {{hombre_jefe}}</th>
+			<th>%</th>
+			<th>Mujer Jefe: {{mujer_jefe}}</th>
+			<th>%</th>			
+		</tr>
+	</thead>
+	<tbody>
+	{% for key in part_cpc.keys|exclude:'total' reversed %}
+		<tr>
+			<td>Participación de {{key}}</td>
+			<td>{{part_cpc|get_value:key}}</td>				
+			<td>{{part_cpc|get_value:key|calcular_frecuencia:encuestas.count}}</td>
+			<td>{{part_cpc_hombre|get_value:key}}</td>
+			<td>{{part_cpc_hombre|get_value:key|calcular_frecuencia:hombre_jefe}}</td>
+			<td>{{part_cpc_mujer|get_value:key}}</td>			
+			<td>{{part_cpc_mujer|get_value:key|calcular_frecuencia:mujer_jefe}}</td>
+		</tr>
+	{% endfor %}
+		<tr>
+			<td>No participa</td>
+			{% with nopart=encuestas.count|restar:part_cpc.total %}
+			<td>{{nopart}}</td>
+			<td>{{nopart|calcular_frecuencia:encuestas.count}}</td>
+			{% endwith %}
+			{% with nopart=hombre_jefe|restar:part_cpc_hombre.total %}
+			<td>{{nopart}}</td>			
+			<td>{{nopart|calcular_frecuencia:hombre_jefe}}</td>
+			{% endwith %}
+			{% with nopart=mujer_jefe|restar:part_cpc_mujer.total %}
+			<td>{{nopart}}</td>			
+			<td>{{nopart|calcular_frecuencia:mujer_jefe}}</td>
+			{% endwith %}
+		</tr>		
+	</tbody>	
+</table>
+<div id="grafo-cpc" class="grafo"></div>
+</div>
+<br>
+<div>
+<table class="tabla-resultados">
+<caption>Participación de los miembros de la familia en Asambleas Comunitarias</caption>
+	<thead>	
+		<tr>
+			<th>Quien participa</th>
+			<th>Todos: {{encuestas.count}}</th>
+			<th>%</th>
+			<th>Hombre Jefe: {{hombre_jefe}}</th>
+			<th>%</th>
+			<th>Mujer Jefe: {{mujer_jefe}}</th>
+			<th>%</th>	
+		</tr>
+	</thead>
+	{% for key in part_asam.keys|exclude:'total' reversed %}
+		<tr>
+			<td>Participación de {{key}}</td>
+			<td>{{part_asam|get_value:key}}</td>				
+			<td>{{part_asam|get_value:key|calcular_frecuencia:encuestas.count}}</td>
+			<td>{{part_asam_hombre|get_value:key}}</td>
+			<td>{{part_asam_hombre|get_value:key|calcular_frecuencia:hombre_jefe}}</td>
+			<td>{{part_asam_mujer|get_value:key}}</td>			
+			<td>{{part_asam_mujer|get_value:key|calcular_frecuencia:mujer_jefe}}</td>
+		</tr>
+	{% endfor %}
+		<tr>
+			<td>No participa</td>
+			{% with nopart=encuestas.count|restar:part_asam.total %}
+			<td>{{nopart}}</td>
+			<td>{{nopart|calcular_frecuencia:encuestas.count}}</td>
+			{% endwith %}
+			{% with nopart=hombre_jefe|restar:part_asam_hombre.total %}
+			<td>{{nopart}}</td>			
+			<td>{{nopart|calcular_frecuencia:hombre_jefe}}</td>
+			{% endwith %}
+			{% with nopart=mujer_jefe|restar:part_asam_mujer.total %}
+			<td>{{nopart}}</td>			
+			<td>{{nopart|calcular_frecuencia:mujer_jefe}}</td>
+			{% endwith %}
+		</tr>		
+	</tbody>	
+</table>
+<div id="grafo-asam" class="grafo"></div>
+</div>
+{% endblock %}
