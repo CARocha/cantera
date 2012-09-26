@@ -17,6 +17,6 @@ urlpatterns = patterns('',
 
 if DEBUG:
     urlpatterns += patterns('',
-                            (r'^archivos/(.*)$', 'django.views.static.serve',
+                            (r'^media/(.*)$', 'django.views.static.serve',
                             {'document_root': os_path.join(MEDIA_ROOT)}),
                            )
