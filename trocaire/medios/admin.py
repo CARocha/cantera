@@ -377,7 +377,7 @@ class EncuestaAdmin(admin.ModelAdmin):
     #date_hierarchy = 'fecha'
     class Media:
         css = {
-            'all': ('/archivos/css/admin.css',),
+            'all': ('/media/css/admin.css',),
         }
                
 admin.site.register(Encuesta, EncuestaAdmin)
