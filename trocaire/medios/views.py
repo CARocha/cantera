@@ -1053,8 +1053,10 @@ def saca_porcentajes(dato, total, formato=True):
 def calcular_promedio(lista):
     n = len(lista)
     total_suma = sum(lista)
-    
-    return round(total_suma/n, 2) 
+    try:
+    	return round(total_suma/n, 2)
+    except:
+    	return 0 
 
 def calcular_mediana(lista):
     n = len(lista)
@@ -1067,4 +1069,10 @@ def calcular_mediana(lista):
     else:
         index_1 = (n/2)
         index_2 = index_1+1
-        return calcular_promedio([lista[index_1-1], lista[index_2-1]])
+        try:
+            return calcular_promedio([lista[index_1-1], lista[index_2-1]])
+        except:
+        	return 0
+        
+        
+        
