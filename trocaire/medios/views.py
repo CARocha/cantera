@@ -659,6 +659,27 @@ def cuatrocuatro(request):
     dondetoy = "cuatrocuatro"
     return render_to_response('encuestas/cuatro.html', RequestContext(request, locals()))
 
+def cultivos_periodos(request):
+    encuestas = _query_set_filtrado(request)
+    c_peridos_m = {}
+    c_peridos_h_m = {}
+    c_peridos_produccion = {}
+    c_periodos_productividad = {}
+
+    for cultivo in CPeriodos.objects.all():
+        total_mz = CultivosPeriodos.objects.filter(cultivos=cultivo, encuesta__in=encuestas)
+        c_peridos_m[cultivo] = total_mz.aggregate(total_mz=Sum('manzana'))
+        c_peridos_h_m[cultivo] = _hombre_mujer_dicc(total_mz.values_list('encuesta__id', flat=True))
+        tabla_c_peridos = _order_dicc(copy.deepcopy(c_peridos_m))
+        
+        total_produccion = CultivosPeriodos.objects.filter(cultivos=cultivo).aggregate(total_p=Sum('produccion'))
+        c_peridos_produccion[cultivo] = total_produccion
+
+        total_productividad = CultivosPeriodos.objects.filter(cultivos=cultivo).aggregate(total_pro=Sum('productividad'))
+        c_periodos_productividad[cultivo] = total_productividad
+        
+
+    return render_to_response('encuestas/cperiodos.html', RequestContext(request, locals()))
 
 def credito(request):
     encuestas = _query_set_filtrado(request)

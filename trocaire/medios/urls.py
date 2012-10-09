@@ -39,4 +39,5 @@ urlpatterns = patterns('trocaire.medios.views',
     url(r'^encuestas/tecnologia-agricola/$', 'tecnologia_agricola', name="tecnologia_agricola"),
     url(r'^encuestas/diversificacion-productiva/$', 'diversificacion_productiva', name="diversificacion_productiva"),
     url(r'^encuestas/cuatro-cuatro/$', 'cuatrocuatro', name="cuatro_cuatro"),
+    url(r'^encuestas/cperiodos/$', 'cultivos_periodos', name="cultivos_periodos"),
 )

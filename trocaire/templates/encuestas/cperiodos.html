@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+{% load tools %}
+{% block extratitle %}CPeriodos{% endblock %}
+
+{%block contenido%}
+
+<div>
+	<table class="tabla-resultados">
+	<caption>Manzana</caption>
+	<thead>
+		<tr>
+			<th>cultivos</th>
+			<th>Manzanas</th>
+			<th>Producción</th>
+			<th>Productividad</th>
+		</tr>
+	</thead>
+		<tbody>
+			{% for value in tabla_c_peridos %}
+			<tr>
+				<td>{{value.0}}</td>
+				<td>{{value.1}}</td>
+				<td>{{value.1|get_frec:c_peridos_m}}</td>
+				{% with tabla=c_peridos_h_m|get_value:value.0 %}
+				<td>{{tabla.hombre}}</td>
+				<td>{{tabla.mujer}}</td>
+				{% endwith %}
+			</tr>
+			{% endfor %}
+		</tbody>
+	</table>
+	<div id="grafo" class="grafo"></div>
+</div>
+Manzanas
+{{c_peridos_m}}<br>
+Produccion
+{{c_peridos_produccion}}<br>
+Productividad
+{{c_periodos_productividad}}
+
+
+{%endblock%}
