@@ -646,6 +646,20 @@ def escolaridad(request):
     dondetoy = "escolaridad"
     return render_to_response('encuestas/escolaridad.html', RequestContext(request, locals()))
 
+def cuatrocuatro(request):
+    encuestas = _query_set_filtrado(request)
+    alquilo = {}
+    alquilo_h_m = {}
+
+    for alquiler in Ciclo.objects.all():
+        nose = Propiedad.objects.filter(ciclo=alquiler, encuesta__in=encuestas)
+        alquilo[alquiler] = nose.count()
+        alquilo_h_m[alquiler] = _hombre_mujer_dicc(nose.values_list('encuesta__id', flat=True))
+    tabla_alquiler = _order_dicc(copy.deepcopy(alquilo))
+    dondetoy = "cuatrocuatro"
+    return render_to_response('encuestas/cuatro.html', RequestContext(request, locals()))
+
+
 def credito(request):
     encuestas = _query_set_filtrado(request)
     opciones = Credito.objects.all().exclude(id__in=[1, 7])
