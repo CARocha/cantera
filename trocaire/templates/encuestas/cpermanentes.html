@@ -1,12 +1,12 @@
 {% extends "base.html" %}
 {% load tools %}
-{% block extratitle %}CPeriodos{% endblock %}
+{% block extratitle %}CPermanentes{% endblock %}
 
 {%block contenido%}
 
 <div>
 	<table class="tabla-resultados">
-	<caption>Hombres cultivos periodos</caption>
+	<caption>Hombres cultivos permanentes</caption>
 	<thead>
 		<tr>
 			<th>cultivos</th>
@@ -16,7 +16,7 @@
 		</tr>
 	</thead>
 		<tbody>
-			{% for k,v in c_peridos_m.items %}
+			{% for k,v in c_permanente_m.items %}
 			<tr>
 				<td>{{k}}</td> 
 				{% for valor in v %}
@@ -31,7 +31,7 @@
 <br><br>
 <div>
 	<table class="tabla-resultados">
-	<caption>Mujeres cultivos periodos</caption>
+	<caption>Mujeres cultivos permanentes</caption>
 	<thead>
 		<tr>
 			<th>cultivos</th>
@@ -41,7 +41,7 @@
 		</tr>
 	</thead>
 		<tbody>
-			{% for k,v in c_peridos_h.items %}
+			{% for k,v in c_permanente_h.items %}
 			<tr>
 				<td>{{k}}</td> 
 				{% for valor in v %}

@@ -662,24 +662,82 @@ def cuatrocuatro(request):
 def cultivos_periodos(request):
     encuestas = _query_set_filtrado(request)
     c_peridos_m = {}
-    c_peridos_h_m = {}
-    c_peridos_produccion = {}
-    c_periodos_productividad = {}
+    c_peridos_h = {}
 
     for cultivo in CPeriodos.objects.all():
-        total_mz = CultivosPeriodos.objects.filter(cultivos=cultivo, encuesta__in=encuestas)
-        c_peridos_m[cultivo] = total_mz.aggregate(total_mz=Sum('manzana'))
-        c_peridos_h_m[cultivo] = _hombre_mujer_dicc(total_mz.values_list('encuesta__id', flat=True))
-        tabla_c_peridos = _order_dicc(copy.deepcopy(c_peridos_m))
-        
-        total_produccion = CultivosPeriodos.objects.filter(cultivos=cultivo).aggregate(total_p=Sum('produccion'))
-        c_peridos_produccion[cultivo] = total_produccion
+        total_mz = CultivosPeriodos.objects.filter(cultivos=cultivo, encuesta__in=encuestas, encuesta__sexo_jefe=1).aggregate(total_mz=Sum('manzana'))['total_mz']
+        total_pr = CultivosPeriodos.objects.filter(cultivos=cultivo, encuesta__in=encuestas, encuesta__sexo_jefe=1).aggregate(total_pr=Sum('produccion'))['total_pr']
+        productividad = total_pr / total_mz if total_mz != 0 else 0
 
-        total_productividad = CultivosPeriodos.objects.filter(cultivos=cultivo).aggregate(total_pro=Sum('productividad'))
-        c_periodos_productividad[cultivo] = total_productividad
+        c_peridos_m[cultivo] = [total_mz,total_pr,productividad]
+
+    for cultivo in CPeriodos.objects.all():
+        total_mz = CultivosPeriodos.objects.filter(cultivos=cultivo, encuesta__in=encuestas, encuesta__sexo_jefe=2).aggregate(total_mz=Sum('manzana'))['total_mz']
+        total_pr = CultivosPeriodos.objects.filter(cultivos=cultivo, encuesta__in=encuestas, encuesta__sexo_jefe=2).aggregate(total_pr=Sum('produccion'))['total_pr']
+        productividad = total_pr / total_mz if total_mz != 0 else 0
+
+        c_peridos_h[cultivo] = [total_mz,total_pr,productividad]
         
 
     return render_to_response('encuestas/cperiodos.html', RequestContext(request, locals()))
+
+def cultivos_permanentes(request):
+    encuestas = _query_set_filtrado(request)
+    c_permanente_m = {}
+    c_permanente_h = {}
+
+    for cultivo in CPermanentes.objects.all():
+        total_mz = CultivosPermanentes.objects.filter(cultivos=cultivo, encuesta__in=encuestas, encuesta__sexo_jefe=1).aggregate(total_mz=Sum('manzana'))['total_mz']
+        total_pr = CultivosPermanentes.objects.filter(cultivos=cultivo, encuesta__in=encuestas, encuesta__sexo_jefe=1).aggregate(total_pr=Sum('produccion'))['total_pr']
+        try:
+            productividad = total_pr / total_mz if total_mz != 0 else 0
+        except:
+            productividad = 0
+
+        c_permanente_m[cultivo] = [total_mz,total_pr,productividad]
+
+    for cultivo in CPermanentes.objects.all():
+        total_mz = CultivosPermanentes.objects.filter(cultivos=cultivo, encuesta__in=encuestas, encuesta__sexo_jefe=2).aggregate(total_mz=Sum('manzana'))['total_mz']
+        total_pr = CultivosPermanentes.objects.filter(cultivos=cultivo, encuesta__in=encuestas, encuesta__sexo_jefe=2).aggregate(total_pr=Sum('produccion'))['total_pr']
+        try:
+            productividad = total_pr / total_mz if total_mz != 0 else 0
+        except:
+            productividad = 0
+
+        c_permanente_h[cultivo] = [total_mz,total_pr,productividad]
+
+    return render_to_response('encuestas/cpermanentes.html', RequestContext(request, locals()))
+
+def cultivos_anuales(request):
+    encuestas = _query_set_filtrado(request)
+    c_anuales_m = {}
+    c_anuales_h = {}
+
+    for cultivo in CAnuales.objects.all():
+        total_mz = CultivosAnuales.objects.filter(cultivos=cultivo, encuesta__in=encuestas, encuesta__sexo_jefe=1).aggregate(total_mz=Sum('manzana'))['total_mz']
+        total_pr = CultivosAnuales.objects.filter(cultivos=cultivo, encuesta__in=encuestas, encuesta__sexo_jefe=1).aggregate(total_pr=Sum('produccion'))['total_pr']
+        try:
+            productividad = total_pr / total_mz if total_mz != 0 else 0
+        except:
+            productividad = 0
+
+        c_anuales_m[cultivo] = [total_mz,total_pr,productividad]
+
+    for cultivo in CAnuales.objects.all():
+        total_mz = CultivosAnuales.objects.filter(cultivos=cultivo, encuesta__in=encuestas, encuesta__sexo_jefe=2).aggregate(total_mz=Sum('manzana'))['total_mz']
+        total_pr = CultivosAnuales.objects.filter(cultivos=cultivo, encuesta__in=encuestas, encuesta__sexo_jefe=2).aggregate(total_pr=Sum('produccion'))['total_pr']
+        try:
+            productividad = total_pr / total_mz if total_mz != 0 else 0
+        except:
+            productividad = 0
+
+        c_anuales_h[cultivo] = [total_mz,total_pr,productividad]
+
+    return render_to_response('encuestas/canuales.html', RequestContext(request, locals()))
+
+def ingreso_desglosado(request):
+    
+    pass
 
 def credito(request):
     encuestas = _query_set_filtrado(request)
