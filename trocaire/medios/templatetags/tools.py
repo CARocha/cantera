@@ -62,5 +62,9 @@ def frec_acumul(lista, index):
 
 @register.filter
 def dolarizar(cantidad, tasa):
-    return int(cantidad/tasa) 
+    return int(cantidad/tasa)
+    
+register.filter
+def ingresoxfamilia(value, arg):
+    return int(value/arg) 
 
