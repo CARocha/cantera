@@ -3,17 +3,18 @@ body{
     padding: 0;
     font-family: "Trebuchet MS", sans-serif;
     margin-bottom: 20px;
+        background: url(../img/bg.png) ;
 }
 .degradado { 
-    height: 8px;
+    height: 5px;
     width: 100%;
-    background: url(../img/degradado.png) repeat-x;
+    background: #f57900;
 }
 .header{
     width: 100%;
-    background: url(../img/back.jpg) repeat-x;
-    height: 70px;
-    border-bottom: 1px #fff solid;
+
+    height: 100px;
+
 }
 .wrapper{
     width: 960px;
@@ -104,15 +105,16 @@ a{
     background-position: 0 -28px;
 }
 .banner{
-    background: url(../img/banner.png) repeat-x;
-    height: 286px;    
+    background:#F5F4EC  repeat-x;
+    padding-top:10px;
+    height: 346px;    
 }
 .intro{
-    width: 320px;
+    width: 495px;
     float: left;
     padding-top: 25px;
     height: 261px;
-    font-size: 12px;        
+    font-size: 2px;        
 }
 .intro .title{    
     font-size: 20px;
@@ -124,19 +126,18 @@ a{
     color: #000;
     text-align: justify;
     padding-left: 5px;
-    font-size: 12px;
+    font-size: 13px;
 }
 .salidas{
     float: left;
-    width: 600px;
+    width: 390px;
     margin-top: 15px;
     padding-left: 40px;
     *padding-left: 5px;
 }
-.salidas a{
-    display: inline-block;
-    height: 246px;
-    width: 285px;
+
+.sistemadesc a{
+    text-decoration: none;
     margin-left: 10px;
 }
 /*.mapeo{    */
@@ -153,7 +154,10 @@ a{
     -moz-box-shadow: 0px 2px 7px #942406;
     -webkit-box-shadow: 0px 2px 7px #942406;
 }
+.cuerpo{
+    background: #fff;
 
+}
 .monitoreo_avanzado{    
     background: url(../img/monitoreo_avanzado.jpg) no-repeat;
     -moz-box-shadow: 0px 2px 7px #942406;
@@ -208,7 +212,7 @@ a{
     color: #3f3f3f;
     padding-top: 8px;
 	padding-bottom: 30px;
-    background: url(../img/footer_back.png) no-repeat center -70px;
+    height: 100%;
 }
 .footer a{
     font-weight: bold;

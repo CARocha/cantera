@@ -4,7 +4,9 @@
         <title>{% block extratitle %}{% endblock %} | Trocaire Medios de Vidas</title>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js" type="text/javascript"></script>
+        
         <link type="text/css" rel="stylesheet"  href="{{MEDIA_URL}}css/trocaire.css" >
+        <link type="text/css" rel="stylesheet"  href="{{MEDIA_URL}}css/bootstrap.min.css" >
         <link rel="icon" href="/files/img/favicon.ico" type="image/x-icon">
         {% block extrahead %}
         {% endblock %}
@@ -37,7 +39,7 @@
         <div class="content" {%if dondetoy2 %}style="width:1130px !important; "{%endif%}>
                 {% block consultar_sidebar %}
                 {% endblock %}
-            <div class="wrapper" {%if dondetoy2 %}style="float:left !important;"{%endif%}>
+            <div class="wrapper cuerpo" {%if dondetoy2 %}style="float:left !important;"{%endif%}>
 
                 {% block contenido %}
                 {% endblock %}
@@ -48,6 +50,7 @@
         <div class="clean"></div>
         <div class="footer">
             <div class="wrapper">
+                <br>
                 Desarrollado por <a href="http://simas.org.ni">SIMAS</a> con <a href="http://djangoproject.com">Django</a> Framework
             </div>
         </div>
