@@ -173,9 +173,7 @@ a{
     background: url(../img/title_bar.png) repeat-x;    
 }
 .content .wrapper{
-    border-left: 1px #d7d7d7 solid;
-    border-right: 1px #d7d7d7 solid;
-    border-bottom: 1px #d7d7d7 solid;
+    border: 1px #d7d7d7 solid;
 }
 .orglink{
     display: block;
@@ -267,7 +265,7 @@ a{
     padding:4px 10px 4px 10px;
     float:left;
     background:#fff;
-    color:#914100;
+    color:#d96831;
     font-weight:bold;
     font-size:17px;
     margin:5px;
@@ -430,6 +428,7 @@ label #id_year{
 #consultar-form{
     background:url(../img/fondoformgrande.jpg) no-repeat;
     width:395px;
+    height: 405px;
 }
 
 #consultar-sidebar{

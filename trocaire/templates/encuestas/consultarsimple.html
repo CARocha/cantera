@@ -50,7 +50,7 @@
 <div style="float:left;">  
     <form method="POST" action="." id="consultar-form">{% csrf_token %}
         <div class="general">
-            <div class="columnaform">
+            <div class="columnaform"><br>
                 <div class="label">{{form.fecha.label}}</div>
                 <div class="filtros">{{form.fecha}}<br>{{form.fecha.errors}}</div>
                 <div class="clean"></div>
@@ -151,5 +151,4 @@
 </div>
 {% endif %}
 <div class="clean"></div>
-<br>
 {% endblock %}
