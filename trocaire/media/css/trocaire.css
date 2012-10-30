@@ -436,8 +436,10 @@ label #id_year{
  float:left;
 }
 #consultar-sidebar #consultar-form{
-    background:url(../img/fondoformsidebar.jpg) no-repeat;
+    background:url(../img/fondoformsidebar.jpg);
+    background-repeat: repeat-y;
     width:160px;
+    height: 550px;
 }
 #consultar-sidebar .label{
     font-size:12px;
