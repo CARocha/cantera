@@ -138,7 +138,7 @@ CHOICE_TECHO = (
                  
 CHOICE_PISO = (
                     (1, '1) Ladrillo, Cemento'),
-                    (2, '2) Tierra y otros'),
+                    (2, '2) Tierra y encalichado'),
                     (3, '3) Tierra')
                  )
                  

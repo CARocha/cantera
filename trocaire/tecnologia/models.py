@@ -39,8 +39,21 @@ CHOICE_TECNOLOGIAS = (
                     (1,'125. Fertilizo con urea y completo'),
                     (2,'126. Protegió contra plagas, enfermedades con agroquimico. O utilizo de herbicidas'),
                     (3,'127. Tiene áreas fertilizadas solamente con abonos orgánicos'),
-                    (4,'128. Tiene áreas protegidas contra plagas y enfermedades solamente con insecticidas, fungicidas y plaguicidas orgánicos')
-               
+                    (4,'128. Tiene áreas protegidas contra plagas y enfermedades solamente con insecticidas, fungicidas y plaguicidas orgánicos'),
+                    (5,'Utiliza preparación de suelo en cama alta'),
+                    (6,'Incorpora abonos verdes'),
+                    (7,'Utiliza asociación y rotación de cultivos'),
+                    (8,'Utiliza cercas vivas'),
+                    (9,'Utiliza zanjas de infiltración'),
+                    (10,'Utiliza cortinas rompevientos'),
+                    (11,'Utiliza labranza cero'),
+                    (12,'Utiliza malla antiviral para control de plagas'),
+                    (13,'Utiliza variedades resistentes'),
+                    (14,'Utiliza lombrihumus'),
+                    (15,'Utiliza desinfección de suelo con ceniza y cal'),
+                    (16,'Utiliza inoculante'),
+                    (17,'Otros'),
+
                     )
                     
 class UsoTecnologia(models.Model):

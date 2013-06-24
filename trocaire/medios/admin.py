@@ -195,6 +195,11 @@ admin.site.register(CIPermanentes)
 admin.site.register(CIEstacionales)
 admin.site.register(CIHortalizas)
 
+class OtrosUsoHortalizaInline(admin.TabularInline):
+    model = OtroUsosHortaliza
+    extra = 1
+    can_delete = True
+
 class AdminIngresoPatioInline(admin.TabularInline):
     model = IngresoPatio
     extra = 1
@@ -364,7 +369,7 @@ class EncuestaAdmin(admin.ModelAdmin):
                AdminConsumoDiarioInline,AdminPricipalLimitacionInline,AdminPatioCultivadaInline,
                AdminArbolesInline,AdminCalidadPatioInline,AdminGanadoMayorInline,
                AdminPrincipalesFuentesInline,AdminCultivosIPeriodosInline,AdminCultivosIPermanentesInline,
-               AdminCultivosIEstacionalesInline,AdminIHortalizasInline,AdminIngresoPatioInline,
+               AdminCultivosIEstacionalesInline,AdminIHortalizasInline,OtrosUsoHortalizaInline,AdminIngresoPatioInline,
                AdminIngresoGanadoInline,AdminProductosProcesadoInline,AdminLactiosInline,AdminOtrosIngresosInline,
                AdminPrincipalFormaInline,AdminVendeProductoInline,AdminRiegoInline,AdminAreaProtegidaInline,
                AdminUsoTecnologiaInline,AdminSemillaInline,AdminDiversidadInline,AdminCrisisInline,
@@ -374,11 +379,11 @@ class EncuestaAdmin(admin.ModelAdmin):
     list_display = ['beneficiario', 'municipio', 'comarca', 'contraparte' ]
     list_filter = ['contraparte','fecha']
     search_fields = ['beneficiario']
-    #date_hierarchy = 'fecha'
-    class Media:
-        css = {
-            'all': ('/media/css/admin.css',),
-        }
+    
+    #class Media:
+    #    css = {
+    #        'all': ('/media/css/admin.css',),
+    #    }
                
 admin.site.register(Encuesta, EncuestaAdmin)
 admin.site.register(Contraparte)

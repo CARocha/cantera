@@ -17,7 +17,12 @@ CHOICE_CIUDADANA_RESPUESTA = (
                
 CHOICE_CIUDADANA_DOS = (
                     (1,'145. CPC'),
-                    (2,'146. Asamblea comunitaria')
+                    (2,'146. Asamblea comunitaria'),
+                    (3,'Iglesia'),
+                    (4,'Cantera'),
+                    (5,'Comité comarcal'),
+                    (6,'Cooperativa'),
+                    (7,'Gabinete familiar' ),
                    
                        )
                

@@ -145,12 +145,28 @@ class IHortalizas(models.Model):
     total = models.FloatField(editable=False)
     
     class Meta:
-        verbose_name_plural = "Hortalizas"
+        verbose_name_plural = "Hortalizas XD risa XD"
         
     def save(self, *args, **kwargs):
         self.total = self.cuanto * self.precio
         super(IHortalizas, self).save(*args, **kwargs)
         signals.post_save.send(sender=Encuesta, instance=self.encuesta)
+
+class OtroUsosHortaliza(models.Model):
+    hortaliza = models.ForeignKey(CIHortalizas)
+    cuanto_consumio = models.FloatField(null=True, blank=True, help_text='en unidades')
+    cuanto_cs = models.FloatField('Cuanto consumio en C$', null=True, blank=True, help_text='en C$')
+    cuanto_cambio = models.FloatField(null=True, blank=True)
+    cuanto_regalo = models.FloatField(null=True, blank=True)
+    valor_regalo = models.FloatField('Valor del objeto de regalo', null=True, blank=True)
+    obtuvo_trueque = models.CharField('Qué obtuvo del trueque', max_length=200, null=True, blank=True)
+    valor_trueque = models.FloatField(null=True, blank=True, help_text='en C$')
+    ahorro_trueque = models.FloatField(null=True, blank=True, help_text='en <C1></C1>')
+    encuesta = models.ForeignKey(Encuesta)
+
+    class Meta:
+        verbose_name_plural = "Otros usos de las hortalizas"
+
         
 class IngresoPatio(models.Model):
     invierno = models.FloatField('Monto de los ingreso obtenido en invierno')
