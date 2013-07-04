@@ -1,0 +1,146 @@
+Hola Carlos:
+
+Estamos iniciando a introducir las encuestas y nos damos cuenta que
+hay algunos campos que no coinciden con la encuesta que estamos
+utilizando. Por esta razón le solicito que haga otra revisión tomando
+en cuenta la última versión que revisamos (adjunta a este archivo) y
+nos habilite los campos que falten. De todas formas aquí le envío una
+lista con algunos datos que necesitamos que se modifiquen.
+
+Muchas gracias por el apoyo.
+
+********************************************************************
+
+Los datos que hemos identificado son los siguientes:
+
+Fecha: añadir campos para el mes y el día
+
+Número de familias que viven ne la vivienda:                 añadir
+esta pregunta --Campo 
+
+Número de niñas/niños entre 0 y 10 que viven en el hogar... dividir
+esta opción en dos: "Número de niñas y niños entre 0 y 10 que viven el
+hogar..." y "Número de niñas y niños entre 11 y 17 que viven el
+hogar..."
+
+Nivel de Escolaridad de Cónyuge: añadir esta pregunta
+
+Inmigración - Los campos deben decir:
+- En el último año alguien de la familia salió a trabajar al exterior y regresó
+- En el último año alguien de la familia salió a trabajar al exterior
+y no ha regresado, pero mantiene contacto
+- En el último año alguien de la familia salió a trabajar en otro
+lugar de Nicaragua y regresa
+- Su conjugue... tiene más de un año de haber salido a trabajar y no
+ha regresado
+
+Materiales del techo: Debe tener un campo 4) Plástico
+
+Los campos para "Materiales de las Paredes" deben ser: 1) Ladrillo,
+bloque, adobe,
+talquezal mejorado  2) Taquezal   3) Minifalda  4) Ripio
+
+Ciclo agrícola de un año:  Para sus actividades, agropecuarias
+alquilo, hizo mediería o le prestaron: Los campos deben decir - 1)
+Propia, 2) Alquila, 3) Mediería, 4) Prestada, 5) No Aplica, 6) Toma
+tierra
+
+Entre "Ciclo Agrícola" y "Cultivos de Periodos" Debe salir la
+pregunta: En su propiedad y en la casa.  ¿Hay zonas de riesgo? ¿De qué
+tipo? Enumerar los 3 más importantes. 1) Inundación, 2) Terremoto, 3)
+Deslave, 4) Incendio forestal, 5) Otro. ¿Cuál? 6) No hay / No sé.
+También, necesitamos un campo donde podemos meter otra razón.
+
+Cultivos de Periodos: Debe salir la opción "Arroz"
+
+Cultívos Permanentes: Debe tener dos columnas: "Cantidad de árboles/
+plantas en producción" y "Producción"
+Las opciones siguientes deben salir: Citricos, Mango, Aguacate,
+Jocote, Plátano, Pitahaya, Guineo, Papaya, Sandia, Melón, Granadilla,
+Calala, Parcela Energética
+
+Cultivos Permanentes:  Debe tener una segunda sección con dos
+columnas: "Área tarea" y "Producción" y con las opciones: Yuca,
+Tubérculo, Piña
+
+Eliminar la pregunta: "Área del patio cultivada en manzanas"
+
+Eliminar la pregunta: "Número de árboles frutales en el patio y en
+otras áreas de la finca no comerciales... o eventualmente comerciales"
+
+Ganado Mayor y Menor: añadir los campos: Chompipes, Patos, Colmenas, Miel y Otro
+
+Fuentes de Ingresos: Añadir una pregunta para preguntar por la
+segunda, tercera, cuarta, etc. actividades de ingresos
+Fuentes de ingresos: Añadir la opción "Venta de carbón", "Venta de
+madera para muebles"
+Ventas cultivos periodos: Añadir la opción "Arroz"
+
+Cultivos Permanentes: Añadir las opciones: Cítricos, Mango, Aguacate,
+Jocote (por baldes), Plátano, Pitahaya, Guineo, Papaya, Sandía, Melón,
+Granadilla, Calala, Yuca (por sacos), Piña
+
+Eliminar la pregunta "Cultivos Estacionales"
+
+Hortalizas XD risa XD:  Eliminar la opción "Cebollas Grande", Añadir
+las opciones: Chayote, Tubérculos
+
+Otros usos de las hortalizas: Eliminar la opción "Cebollas Grande",
+Añadir las opciones: Chayote, Tubérculos
+Otros usos de las hortalizas: cambiar "cuanto regalo" a "Qué obtuvo en
+el trueque?"  y cambiar "qué obtuvo del trueque" a "Ahorro por trueque
+C$)
+
+Eliminar la pregunta "ingreso por la producción agrícola del patio"
+
+Ingresos por la comercialización del ganado mayor y menor: Eliminar
+"Aves", Añadir "Gallinas y pollos", "Chompipes", "Patos", "Miel"
+
+"Ingresos por la producción, comercialización e ingresos por productos
+procesados"; Añadir las opciones "Vinagres", "Otros", "Artesanía y
+Otros", "Artesanías"
+
+Principal Forma de comercializar su producción: Añadir la opción "Trueque"
+
+Como vende cada uno de los siguientes productos: Añadir las opciones
+"Colmenas" y "Madera"
+
+Tiene riego  (Área regada en metros cuadrados) Añadir "Biofiltro"
+
+Área protegida con obras de CSA (En manzana): Añadir la opción"Hortalizas"
+
+Tecnología utilizada en la producción agropecuaria: añadir la opción
+"Tiene áreas protegidas contra plagas y enfermedades solamente con
+insecticidas, fungicidas y plaguicidas biológicas"
+
+Cuál es el principal tipo de semilla que utilizó para sembrar maíz y
+frijol: Maiz: añadir "Maiz acriollado", Frijol: añadir "Frijol
+acriollado"
+
+Añadir la pregunta siguiente:
+Cuántos tiempos de comida consumió ayer:
+1) Sólo un tiempo (ya sea desayuno, almuerzo o cena)
+2) Dos tiempos de comida
+3) Los tres tiempo
+4) Los tres tiempo y 1 merienda
+5) Los tres tiempos y 2 meriendas
+
+Acceso a crédito: En las secciones de "Hombre", "Mujer", "Otro hombre
+que vive en hogar" y "Otra mujer que vive en el lugar" añadir las
+opciones "Banco Produzcamos", "Usura cero" y "Bono productivo"
+
+Añadir la pregunta: "Podría decirnos, por favor, si estas organismos
+que le vamos a mencionar promueven la protección al medio ambiente y
+adaptación al cambio climático y de qué manera..."
+Comité comarcal
+CAPS
+Cooperativa
+Gabinete familiar
+Asamblea Comunitaria
+Iglesia
+Las columnas deben decir: "Producción Agroecológica", "Conservación de
+recursos agua", "Medidas de adaptación al cambio climático", "Jornadas
+de limpieza y salud" y "Reforestación"
+
+Quien de la familia participa en los CPC y AC: Añadir las opciones
+"CAPS", "CLS" y "Otros"

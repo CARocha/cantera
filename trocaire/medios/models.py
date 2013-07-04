@@ -83,20 +83,21 @@ CHOICE_SEXO_JEFE = (
                    
 CHOICE_DESCRIPCION = (
     (1, '8. Número de personas que viven en el hogar...(que no se han ido a vivir permanente a otro lugar)'),
-    (2, '9. Número de niñas/niños entre 0 y 17 que viven en el hogar...'),
+    (2, '9. Número de niñas y niños entre 0 y 10 que viven en el hogar...'),
     (3, '10. Número personas entre 18 y 60 años en el hogar...'),
     (4, '11. Número personas 61 años y más en el hogar familiar...'),
-    (5, '12. Número de personas entre 18 y 60 años en el hogar familiar con discapacidad o deficiencia imposibilitados de trabajar...')
+    (5, '12. Número de personas entre 18 y 60 años en el hogar familiar con discapacidad o deficiencia imposibilitados de trabajar...'),
+    (6, '. Número de niñas y niños entre 10 y 17 que viven en el hogar...'),
 )
 
 # II calidad de vida apps calidad_vida
 
 CHOICE_INMIGRACION = (
-    (1, '15. En los últimos 12 meses... Alguien de la familia salió a trabajar por un periodo menor de 6 meses fuera del pais y regreso'),
-    (2, '16. En los últimos 12 meses... Alguien de la familia salió a trabajar por un periodo entre 6 y 12 meses fuera del pais y regreso'),
-    (3, '17. En los últimos 12 meses... Alguien de la familia salió a trabajar por un periodo menor de 6 meses en Nicaragua y regreso'),
-    (4, '18. En los últimos 12 meses... Alguien de la familia salió a trabajar por un periodo entre 6 y 12 meses en Nicaragua y regreso'),
-    (5, '19. Su conyugue... tiene más de un año de haber salido a trabajar y no ha regresado')
+    (1, '-. En el último año alguien de la familia salió a trabajar al exterior y regresó'),
+    (2, '-. En el último año alguien de la familia salió a trabajar al exterior y no ha regresado, pero mantiene contacto'),
+    (3, '-. En el último año alguien de la familia salió a trabajar en otrolugar de Nicaragua y regresa'),
+    (4, '-. Su conjugue... tiene más de un año de haber salido a trabajar y no regresado'),
+    (5, '-. no aplica')
 )
 
 CHOICE_ACCESO = (
@@ -133,7 +134,8 @@ CHOICE_SINO = (
 CHOICE_TECHO = (
                     (1, '1) Zinc o playcen'),
                     (2, '2) Teco y otros'),
-                    (3, '3) Paja o ripios')
+                    (3, '3) Paja o ripios'),
+                    (4, '4) Plástico')
                  )
                  
 CHOICE_PISO = (
@@ -143,9 +145,10 @@ CHOICE_PISO = (
                  )
                  
 CHOICE_PAREDES = (
-                    (1, '1) Ladrillo, bloque, adobe, talquezal'),
-                    (2, '2) Madera, minifalda'),
-                    (3, '3) Materiales en mal estado')
+                    (1, '1) Ladrillo, bloque, adobe, talquezal mejorado'),
+                    (2, '2) Talquezal'),
+                    (3, '3) Minifalda'),
+                    (4, '4) Ripio')
                  )         
              
 CHOICE_SERVICIO = (
