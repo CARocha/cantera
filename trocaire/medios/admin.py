@@ -380,10 +380,10 @@ class EncuestaAdmin(admin.ModelAdmin):
     list_filter = ['contraparte','fecha']
     search_fields = ['beneficiario']
     
-    #class Media:
-    #    css = {
-    #        'all': ('/media/css/admin.css',),
-    #    }
+    class Media:
+       css = {
+           'all': ('/media/css/admin.css',),
+       }
                
 admin.site.register(Encuesta, EncuestaAdmin)
 admin.site.register(Contraparte)

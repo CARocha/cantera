@@ -7,7 +7,8 @@ CHOICE_RIEGO = (
                  (2,'2. Aspersión'),
                  (3,'3. Goteo'),
                  (4,'4. Gravedad'),
-                 (5,'5. Otro')
+                 (5,'5. Otro'),
+                 (6, 'Biofiltro')
                )
                
 class Riego(models.Model):
@@ -16,7 +17,7 @@ class Riego(models.Model):
     encuesta = models.ForeignKey(Encuesta)
 
     class Meta:
-        verbose_name_plural = "123. Tiene riego (Área regada en manzana)"
+        verbose_name_plural = "123. Tiene riego (Área regada en metro cuadrado)"
         
 CHOICE_CSA = (
                     (1,'1. No tiene'),
@@ -24,7 +25,8 @@ CHOICE_CSA = (
                     (3,'3. Anuales'),
                     (4,'4. Permanentes'),
                     (5,'5. Pastos'),
-                    (6,'6. Área total')
+                    (6,'6. Área total'),
+                    (7, 'Hortalizas')
                )
                
 class AreaProtegida(models.Model):
@@ -52,8 +54,8 @@ CHOICE_TECNOLOGIAS = (
                     (14,'Utiliza lombrihumus'),
                     (15,'Utiliza desinfección de suelo con ceniza y cal'),
                     (16,'Utiliza inoculante'),
-                    (17,'Otros'),
-
+                    (17, 'Tiene áreas protegidas contra plagas y enfermedades solamente con insecticidas, fungicidas y plaguicidas biológicas'),
+                    (18,'Otros'),
                     )
                     
 class UsoTecnologia(models.Model):
@@ -71,14 +73,16 @@ CHOICE_MAIZ = (
                     (1,'1. Maíz criollo'),
                     (2,'2. Maíz mejorado'),
                     (3,'3. Otra'),
-                    (4,'4. No sembró Maíz')
+                    (4,'4. No sembró Maíz'),
+                    (5, 'Maiz acriollado'),
                     
                )
 CHOICE_FRIJOL = (
                     (1,'1. Frijol criollo'),
                     (2,'2. Frijol mejorado'),
                     (3,'3. Otra'),
-                    (4,'4. No sembró Frijol')
+                    (4,'4. No sembró Frijol'),
+                    (5, 'Frijol acriollado'),
                    
                )
                

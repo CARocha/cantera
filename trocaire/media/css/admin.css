@@ -1,36 +1,72 @@
-#tomadecicion_set-group {
+/*#tomadecicion_set-group {
+	display: none;
+}*/
+
+/*#frecuencia_set-group {
+	display: none;
+}*/
+
+/*#genero_set-group {
+	display: none;
+}*/
+
+/*#participacioncpc_set-group {
 	display: none;
 }
+*/
+/*#participacion_set-group {
+	display: none;
+}*/
 
-#frecuencia_set-group {
+/*#accesocredito_set-group {
+	display: none;
+}*/
+
+/*#areaprotegida_set-group {
 	display: none;
 }
-
-#genero_set-group {
+*/
+/*#riego_set-group {
 	display: none;
-}
+}*/
 
-#participacioncpc_set-group {
+/*#calidadpatio_set-group {
 	display: none;
-}
+}*/
 
-#participacion_set-group {
+/*#arboles_set-group {
 	display: none;
-}
+}*/
 
-#accesocredito_set-group {
+/*#patiocultivada_set-group {
 	display: none;
-}
+}*/
 
-#areaprotegida_set-group {
+/*#tierra_set-group {
 	display: none;
-}
+}*/
 
-#riego_set-group {
+/*#agua_set-group {
 	display: none;
-}
+}*/
 
-#calidadpatio_set-group {
+/*#razonesnoestudia_set-group {
+	display: none;
+}*/
+
+/*#accesoescuela_set-group {
+	display: none;
+}*/
+
+/*#inmigracion_set-group {
+	display: none;
+}*/
+
+/*#descripcion_set-group {
+	display: none;
+}*/
+
+#patiocultivada_set-group {
 	display: none;
 }
 
@@ -38,30 +74,10 @@
 	display: none;
 }
 
-#patiocultivada_set-group {
+#cultivosiestacionales_set-group {
 	display: none;
 }
 
-#tierra_set-group {
-	display: none;
-}
-
-#agua_set-group {
-	display: none;
-}
-
-#razonesnoestudia_set-group {
-	display: none;
-}
-
-#accesoescuela_set-group {
-	display: none;
-}
-
-#inmigracion_set-group {
-	display: none;
-}
-
-#descripcion_set-group {
+#ingresopatio_set-group {
 	display: none;
 }

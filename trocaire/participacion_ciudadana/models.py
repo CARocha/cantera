@@ -4,15 +4,25 @@ from trocaire.medios.models import Encuesta
 
 CHOICE_CIUDADANA = (
                     (1,'143. CPC'),
-                    (2,'144. Asamblea comunitaria')
-                    
-                   )
+                    (2,'144. Asamblea comunitaria'),
+                    (3,'-. Comité comarca'),
+                    (4,'-. CAPS'),
+                    (5,'-. Cooperativa'),
+                    (6,'-. Gabinete familiar'),
+                    (7,'-. Asamblea Comunitaria'),
+                    (8,'-. Iglesia'),
+
+                    )
 CHOICE_CIUDADANA_RESPUESTA = (
                                 (1,'Son muy beneficioso'),
                                 (2,'Hacen algunas cosas'),
                                 (3,'No hacen nada'),
-                                (4,'NS NR')
-                    
+                                (4,'NS NR'),
+                                (5,'Producción Agroecológica'),
+                                (6,'Conservación de recursos agua'),
+                                (7,'Medidas de adaptación al cambio climático'),
+                                (8,'Jornadas de limpieza y salud'),
+                                (9,'Reforestación'),
                               ) 
                
 CHOICE_CIUDADANA_DOS = (
@@ -22,7 +32,10 @@ CHOICE_CIUDADANA_DOS = (
                     (4,'Cantera'),
                     (5,'Comité comarcal'),
                     (6,'Cooperativa'),
-                    (7,'Gabinete familiar' ),
+                    (7,'Gabinete familiar'),
+                    (8,'CAPS'),
+                    (9,'CLS'),
+                    (10, 'Otros'),
                    
                        )
                
@@ -45,7 +58,7 @@ class Participacion(models.Model):
     respuesta = models.IntegerField(choices=CHOICE_CIUDADANA_RESPUESTA)
     encuesta = models.ForeignKey(Encuesta)
     class Meta:
-        verbose_name_plural = "Podria decirnos si esto organismo que le vamos a mencionar son muy beneficioso"
+        verbose_name_plural = "Podria decirnos si esto organismo que le vamos a mencionar promueven la protección al medio ambiente y adaptación al cambio climático y de qué manera"
 
 class ParticipacionCPC(models.Model):
     organismo = models.IntegerField(choices=CHOICE_CIUDADANA_DOS)

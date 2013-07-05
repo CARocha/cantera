@@ -145,7 +145,7 @@ class IHortalizas(models.Model):
     total = models.FloatField(editable=False)
     
     class Meta:
-        verbose_name_plural = "Hortalizas XD risa XD"
+        verbose_name_plural = "Hortalizas"
         
     def save(self, *args, **kwargs):
         self.total = self.cuanto * self.precio
@@ -157,11 +157,11 @@ class OtroUsosHortaliza(models.Model):
     cuanto_consumio = models.FloatField(null=True, blank=True, help_text='en unidades')
     cuanto_cs = models.FloatField('Cuanto consumio en C$', null=True, blank=True, help_text='en C$')
     cuanto_cambio = models.FloatField(null=True, blank=True)
-    cuanto_regalo = models.FloatField(null=True, blank=True)
+    cuanto_regalo = models.FloatField('Qué obtuvo en el trueque?',null=True, blank=True)
     valor_regalo = models.FloatField('Valor del objeto de regalo', null=True, blank=True)
-    obtuvo_trueque = models.CharField('Qué obtuvo del trueque', max_length=200, null=True, blank=True)
+    obtuvo_trueque = models.CharField('Ahorro por trueque C$', max_length=200, null=True, blank=True)
     valor_trueque = models.FloatField(null=True, blank=True, help_text='en C$')
-    ahorro_trueque = models.FloatField(null=True, blank=True, help_text='en <C1></C1>')
+    ahorro_trueque = models.FloatField(null=True, blank=True, help_text='en C$')
     encuesta = models.ForeignKey(Encuesta)
 
     class Meta:
@@ -296,7 +296,8 @@ CHOICE_VENDE = (
                  (2,'2. Vende colectivo. NO incluye venta en la cooperativa'),
                  (3,'3. Vende a la cooperativa de la que es socio'),
                  (4,'4. Vende en ferias campesinas'),
-                 (5,'5. No aplica. No vende')
+                 (5,'5. No aplica. No vende'),
+                 (6,'6. Trueque')
                )
                           
 class PrincipalForma(models.Model):
