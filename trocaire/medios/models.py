@@ -82,12 +82,12 @@ CHOICE_SEXO_JEFE = (
                    )
                    
 CHOICE_DESCRIPCION = (
-    (1, '8. Número de personas que viven en el hogar...(que no se han ido a vivir permanente a otro lugar)'),
+    (1, '8. Número de personas que viven en el hogar'),
     (2, '9. Número de niñas y niños entre 0 y 10 que viven en el hogar...'),
     (3, '10. Número personas entre 18 y 60 años en el hogar...'),
     (4, '11. Número personas 61 años y más en el hogar familiar...'),
     (5, '12. Número de personas entre 18 y 60 años en el hogar familiar con discapacidad o deficiencia imposibilitados de trabajar...'),
-    (6, '. Número de niñas y niños entre 10 y 17 que viven en el hogar...'),
+    (6, 'Número de niñas y niños entre 11 y 17 que viven en el hogar...'),
 )
 
 # II calidad de vida apps calidad_vida
@@ -132,8 +132,8 @@ CHOICE_SINO = (
                  )                                  
 
 CHOICE_TECHO = (
-                    (1, '1) Zinc o playcen'),
-                    (2, '2) Teco y otros'),
+                    (1, '1) Zinc o NIcalit'),
+                    (2, '2) Tejas y otros'),
                     (3, '3) Paja o ripios'),
                     (4, '4) Plástico')
                  )
@@ -159,7 +159,7 @@ CHOICE_SERVICIO = (
                  
 CHOICE_ESTADO = (
                     (1, '1) Buen estado'),
-                    (2, '2) Ni muy bueno ni muy malo'),
+                    (2, '2) Regular'),
                     (3, '3) En muy mal estado')
                  )
                  

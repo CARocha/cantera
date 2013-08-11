@@ -11,6 +11,7 @@ CHOICE_CIUDADANA = (
                     (6,'-. Gabinete familiar'),
                     (7,'-. Asamblea Comunitaria'),
                     (8,'-. Iglesia'),
+                    (9,'-. Brigada ecologica'),
 
                     )
 CHOICE_CIUDADANA_RESPUESTA = (

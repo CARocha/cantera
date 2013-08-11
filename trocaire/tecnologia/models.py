@@ -6,9 +6,9 @@ CHOICE_RIEGO = (
                  (1,'1. No tiene'),
                  (2,'2. Aspersión'),
                  (3,'3. Goteo'),
-                 (4,'4. Gravedad'),
-                 (5,'5. Otro'),
-                 (6, 'Biofiltro')
+                 (4,'4. Biofiltro'),
+                 (5,'5. Gravedad'),
+                 (6,'6. Otro')
                )
                
 class Riego(models.Model):
@@ -21,12 +21,12 @@ class Riego(models.Model):
         
 CHOICE_CSA = (
                     (1,'1. No tiene'),
-                    (2,'2. Granos y hortalizas'),
+                    (2,'2. Granos básicos'),
                     (3,'3. Anuales'),
-                    (4,'4. Permanentes'),
-                    (5,'5. Pastos'),
-                    (6,'6. Área total'),
-                    (7, 'Hortalizas')
+                    (4,'4. Hortalizas'),
+                    (5,'5. Permanentes'),
+                    (6,'6. Pastos'),
+                    (7,'7. Área total')
                )
                
 class AreaProtegida(models.Model):
@@ -41,20 +41,20 @@ CHOICE_TECNOLOGIAS = (
                     (1,'125. Fertilizo con urea y completo'),
                     (2,'126. Protegió contra plagas, enfermedades con agroquimico. O utilizo de herbicidas'),
                     (3,'127. Tiene áreas fertilizadas solamente con abonos orgánicos'),
-                    (4,'128. Tiene áreas protegidas contra plagas y enfermedades solamente con insecticidas, fungicidas y plaguicidas orgánicos'),
-                    (5,'Utiliza preparación de suelo en cama alta'),
-                    (6,'Incorpora abonos verdes'),
-                    (7,'Utiliza asociación y rotación de cultivos'),
-                    (8,'Utiliza cercas vivas'),
-                    (9,'Utiliza zanjas de infiltración'),
-                    (10,'Utiliza cortinas rompevientos'),
-                    (11,'Utiliza labranza cero'),
-                    (12,'Utiliza malla antiviral para control de plagas'),
-                    (13,'Utiliza variedades resistentes'),
-                    (14,'Utiliza lombrihumus'),
-                    (15,'Utiliza desinfección de suelo con ceniza y cal'),
-                    (16,'Utiliza inoculante'),
-                    (17, 'Tiene áreas protegidas contra plagas y enfermedades solamente con insecticidas, fungicidas y plaguicidas biológicas'),
+                    (4,'128. Tiene áreas protegidas contra plagas y enfermedades solamente con insecticidas, fungicidas y plaguicidas biológicos'),
+                    (5,'128. Tiene áreas protegidas contra plagas y enfermedades solamente con insecticidas, fungicidas y plaguicidas'),
+                    (6,'Utiliza preparación de suelo en cama alta'),
+                    (7,'Incorpora abonos verdes'),
+                    (8,'Utiliza asociación y rotación de cultivos'),
+                    (9,'Utiliza cercas vivas'),
+                    (10,'Utiliza zanjas de infiltración'),
+                    (11,'Utiliza cortinas rompevientos'),
+                    (12,'Utiliza labranza cero'),
+                    (13,'Utiliza malla antiviral para control de plagas'),
+                    (14,'Utiliza variedades resistentes'),
+                    (15,'Utiliza lombrihumus'),
+                    (16,'Utiliza desinfección de suelo con ceniza y cal'),
+                    (17,'Utiliza inoculante'),
                     (18,'Otros'),
                     )
                     
@@ -71,19 +71,17 @@ class UsoTecnologia(models.Model):
         
 CHOICE_MAIZ = (
                     (1,'1. Maíz criollo'),
-                    (2,'2. Maíz mejorado'),
-                    (3,'3. Otra'),
-                    (4,'4. No sembró Maíz'),
-                    (5, 'Maiz acriollado'),
-                    
+                    (2,'2. Maiz acriollado'),
+                    (3,'3. Maíz mejorado'),
+                    (4,'4. Otra'),
+                    (5,'5. No sembró Maíz')     
                )
 CHOICE_FRIJOL = (
                     (1,'1. Frijol criollo'),
-                    (2,'2. Frijol mejorado'),
-                    (3,'3. Otra'),
-                    (4,'4. No sembró Frijol'),
-                    (5, 'Frijol acriollado'),
-                   
+                    (2, '2. Frijol acriollado'),
+                    (3,'3. Frijol mejorado'),
+                    (4,'4. Otra'),
+                    (5,'5. No sembró Frijol')
                )
                
 class Semilla(models.Model):

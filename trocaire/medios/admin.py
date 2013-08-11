@@ -73,7 +73,7 @@ class AdminTierraInline(admin.TabularInline):
     
 class AdminPropiedadInline(admin.TabularInline):
     model = Propiedad
-    fields = ('ciclo',)
+    #fields = ('ciclo',)
     extra = 1
     max_num = 1
     can_delete = True
@@ -287,6 +287,12 @@ class AdminSemillaInline(admin.TabularInline):
     can_delete = True
     
 # diversidad alimentaria
+
+class AdminTiemposInline(admin.TabularInline):
+    model = TiempoComida
+    extra = 1
+    max_num = 1
+    can_delete = True
     
 class AdminDiversidadInline(admin.TabularInline):
     model = Diversidad
@@ -369,10 +375,10 @@ class EncuestaAdmin(admin.ModelAdmin):
                AdminConsumoDiarioInline,AdminPricipalLimitacionInline,AdminPatioCultivadaInline,
                AdminArbolesInline,AdminCalidadPatioInline,AdminGanadoMayorInline,
                AdminPrincipalesFuentesInline,AdminCultivosIPeriodosInline,AdminCultivosIPermanentesInline,
-               AdminCultivosIEstacionalesInline,AdminIHortalizasInline,OtrosUsoHortalizaInline,AdminIngresoPatioInline,
-               AdminIngresoGanadoInline,AdminProductosProcesadoInline,AdminLactiosInline,AdminOtrosIngresosInline,
+               AdminCultivosIEstacionalesInline,AdminIHortalizasInline,AdminIngresoPatioInline,OtrosUsoHortalizaInline,
+               AdminIngresoGanadoInline,AdminLactiosInline,AdminProductosProcesadoInline,AdminOtrosIngresosInline,
                AdminPrincipalFormaInline,AdminVendeProductoInline,AdminRiegoInline,AdminAreaProtegidaInline,
-               AdminUsoTecnologiaInline,AdminSemillaInline,AdminDiversidadInline,AdminCrisisInline,
+               AdminUsoTecnologiaInline,AdminSemillaInline,AdminTiemposInline,AdminDiversidadInline,AdminCrisisInline,
                AdminAccesoCreditoInline,AdminParticipacionInline,AdminParticipacionCPCInline,AdminFrecuenciaInline,
                AdminGeneroInline,AdminTomaDecicionInline,              
                ]

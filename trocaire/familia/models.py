@@ -16,7 +16,7 @@ class Composicion(models.Model):
                                     choices=CHOICE_RELACION)
     sexo_jefe = models.IntegerField('6. Si no es jefe/a... Cuál es el sexo del jefe de familia',
                                     choices=CHOICE_SEXO_JEFE)
-    num_familia = models.IntegerField('7. Número de personas que viven en la vivienda')
+    num_familia = models.IntegerField('7. Número de familias que viven en la vivienda')
     encuesta = models.ForeignKey(Encuesta)
     #ocultos
     dependientes = models.FloatField(editable=False, default=0)
@@ -65,12 +65,12 @@ class Descripcion(models.Model):
 
 CHOICE_ESCOLARIDAD = (
                             (1, "1) Analfabeto"),
-                            (2, "2) 4 y hasta 6 grado de Primaria"),
-                            (3, "3) Algo de Secundaria"),
-                            (4, "4) Bachiller o Técnico Medio"),
-                            (5, "5) Universidad o Profesional Universitario"),
-                            (6, "6) No aplica"),
-                            (7, "7) Hasta 3er grado")
+                            (2, "2) Semilector o hasta 3 grado"),
+                            (3, "3) primaria aprobada"),
+                            (4, "4) SEcundaria incompleta"),
+                            (5, "5) Bachiller o técnico medio"),
+                            (6, "6) Universidad o profesional universitario"),
+                            (7, "7) No aplica")
                      )
         
 class Escolaridad(models.Model):

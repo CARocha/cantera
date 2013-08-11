@@ -296,8 +296,8 @@ CHOICE_VENDE = (
                  (2,'2. Vende colectivo. NO incluye venta en la cooperativa'),
                  (3,'3. Vende a la cooperativa de la que es socio'),
                  (4,'4. Vende en ferias campesinas'),
-                 (5,'5. No aplica. No vende'),
-                 (6,'6. Trueque')
+                 (5,'5. Trueque'),
+                 (6,'6. No aplica. No vende')
                )
                           
 class PrincipalForma(models.Model):

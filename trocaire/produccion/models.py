@@ -55,7 +55,7 @@ class CultivosPeriodos(models.Model):
         
 class CultivosPermanentes(models.Model):
     cultivos = models.ForeignKey(CPermanentes, verbose_name="Cultivos Permanentes")
-    manzana = models.FloatField(verbose_name="Área Manzanas")
+    manzana = models.FloatField(verbose_name="Cantidad árboles/plantas en prod.")
     produccion = models.FloatField(verbose_name="Producción")
     encuesta = models.ForeignKey(Encuesta)
     #ocultos
@@ -101,10 +101,11 @@ class Hortalizas(models.Model):
 class ConsumoDiario(models.Model):
     maiz = models.FloatField('76. Maiz')
     frijol = models.FloatField('77. Frijol')
+    arroz = models.FloatField('77.1. Arroz', null=True, blank=True)
     encuesta = models.ForeignKey(Encuesta)
 
     class Meta:
-        verbose_name_plural = "Consumo diario de maíz y frijol.Libras consumidas por familia"
+        verbose_name_plural = "Consumo diario de maíz ,frijol y arroz.Libras consumidas por familia"
         
 class Limitaciones(models.Model):
     nombre = models.CharField(max_length=200)
@@ -156,6 +157,7 @@ class Ganado(models.Model):
 class GanadoMayor(models.Model):
     ganado = models.ForeignKey(Ganado, verbose_name="Ganado mayor y menor en propiedad")
     cantidad = models.IntegerField()
+    frecuencia = models.IntegerField('Frecuencia de venta(veces al año)')
     encuesta = models.ForeignKey(Encuesta)
 
     class Meta:

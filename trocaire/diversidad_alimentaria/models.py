@@ -24,3 +24,18 @@ class Diversidad(models.Model):
     encuesta = models.ForeignKey(Encuesta)
     class Meta:
         verbose_name_plural = "Diversidad Alimentaria"
+
+CHOICE_TIEMPO = (
+                    (1,'Solo un tiempo(ya sea desayuno, almuerzo o cena)'),
+                    (2,'Dos tiempo de comida'),
+                    (3,'Los tres tiempo'),
+                    (4,'Los tres tiempo y 1 merienda'),
+                    (5,'Los tres tiempo y 2 meriendas')
+               )
+
+class TiempoComida(models.Model):
+    tiempos = models.IntegerField(choices=CHOICE_TIEMPO,null=True, blank=True)
+    encuesta = models.ForeignKey(Encuesta)
+
+    class Meta:
+        verbose_name_plural = "Cuántos tiempos de comida comsumió ayer"
