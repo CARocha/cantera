@@ -13,7 +13,7 @@ CHOICE_RIEGO = (
                
 class Riego(models.Model):
     respuesta = models.IntegerField(choices=CHOICE_RIEGO)
-    area = models.FloatField('Área regadas en Manzanas', help_text="en manzanas")
+    area = models.FloatField('Área regadas en m2', help_text="en mtro cuadrado")
     encuesta = models.ForeignKey(Encuesta)
 
     class Meta:
@@ -60,10 +60,11 @@ CHOICE_TECNOLOGIAS = (
                     
 class UsoTecnologia(models.Model):
     tecnologia = models.IntegerField(choices=CHOICE_TECNOLOGIAS)
-    granos = models.IntegerField('Granos y hortalizas', choices=CHOICE_SINO)
+    granos = models.IntegerField('Granos', choices=CHOICE_SINO)
     anuales = models.IntegerField('Anuales', choices=CHOICE_SINO)
     permanentes = models.IntegerField('Permanentes', choices=CHOICE_SINO)
     pastos = models.IntegerField('Pastos', choices=CHOICE_SINO)
+    hortaliza = models.IntegerField('Hortalizas', choices=CHOICE_SINO, null=True, blank=True)
     encuesta = models.ForeignKey(Encuesta)
 
     class Meta:

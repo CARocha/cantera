@@ -277,7 +277,7 @@ class AdminAreaProtegidaInline(admin.TabularInline):
 class AdminUsoTecnologiaInline(admin.TabularInline):
     model = UsoTecnologia
     extra = 1
-    max_num = 4
+    max_num = 20
     can_delete = True
     
 class AdminSemillaInline(admin.TabularInline):
@@ -325,7 +325,7 @@ admin.site.register(Credito)
 class AdminParticipacionInline(admin.TabularInline):
     model = Participacion
     extra = 1
-    max_num = 2
+    max_num = 20
     can_delete = True
     
 class AdminParticipacionCPCInline(admin.TabularInline):

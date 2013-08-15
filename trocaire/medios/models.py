@@ -58,7 +58,8 @@ CHOICE_SEXO = (
 CHOICE_CIVIL = (
                     (1, '1) Casado/a'),
                     (2, '2) Soltero/a'),
-                    (3, '3) Viudo/a')
+                    (3, '3) Viudo/a'),
+                    (4, '4) Unión libre')
                 )
               
 CHOICE_JEFE = (

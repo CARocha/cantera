@@ -85,7 +85,7 @@ class CultivosAnuales(models.Model):
         
 class Hortalizas(models.Model):
     cultivos = models.ForeignKey(CHortalizas, verbose_name="Hortalizas")
-    manzana = models.FloatField(verbose_name="Área Manzanas")
+    manzana = models.FloatField(verbose_name="Área metro cuadrados")
     produccion = models.FloatField(verbose_name="Producción")
     encuesta = models.ForeignKey(Encuesta)
     #ocultos
