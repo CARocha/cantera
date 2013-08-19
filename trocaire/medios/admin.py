@@ -89,12 +89,18 @@ class AdminCultivosPeriodosInline(admin.TabularInline):
     max_num = 8
     can_delete = True
     
+class AdminHuertoInline(admin.TabularInline):
+    model = Huerto
+    extra = 1
+    max_num = 1
+    can_delete = True
     
 admin.site.register(CPeriodos)
 admin.site.register(CPermanentes)
 admin.site.register(CAnuales)
 admin.site.register(CHortalizas)
 admin.site.register(Codigo)
+admin.site.register(Huerto)
 
 class AdminCultivosPermanentesInline(admin.TabularInline):
     model = CultivosPermanentes
@@ -371,7 +377,7 @@ class EncuestaAdmin(admin.ModelAdmin):
     inlines = [AdminComposicionInline,AdminDescripcionInline,AdminEscolaridadInline,
                AdminInmigracionInline,AdminAccesoEscuela,AdminRazonesNoEstudia,AdminAbasteceInline,
                AdminTierraInline,AdminPropiedadInline,AdminCultivosPeriodosInline,
-               AdminCultivosPermanentesInline,AdminCultivosAnualesInline,AdminHortalizaInline,
+               AdminCultivosPermanentesInline,AdminCultivosAnualesInline,AdminHortalizaInline,AdminHuertoInline,
                AdminConsumoDiarioInline,AdminPricipalLimitacionInline,AdminPatioCultivadaInline,
                AdminArbolesInline,AdminCalidadPatioInline,AdminGanadoMayorInline,
                AdminPrincipalesFuentesInline,AdminCultivosIPeriodosInline,AdminCultivosIPermanentesInline,

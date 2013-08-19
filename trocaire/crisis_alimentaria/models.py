@@ -73,3 +73,26 @@ def create_credito_callback(sender, **kwargs):
     instance = kwargs['instance']
     if kwargs['action'] == 'post_add':
         _set_encuesta_credito(instance.id)
+
+
+CHOICE_HUERTO_PERIODO = (
+            (1, 'Si'),
+            (2, 'No')
+    )
+
+CHOICE_HUERTO_EPOCA = (
+            (1, 'Invierno'),
+            (2, 'Verano'),
+            (3, 'Todo el año'),
+            (4, 'Ninguno')
+    )
+
+class Huerto(models.Model):
+    periodo = models.IntegerField('En el período ha tenido huerto' ,choices=CHOICE_HUERTO_PERIODO, 
+                                                        null=True, blank=True)
+    epoca = models.IntegerField('En qué época produce el huerto?',choices=CHOICE_HUERTO_EPOCA,
+                                                    null=True, blank=True)
+    encuesta = models.ForeignKey(Encuesta)
+
+    class Meta:
+        verbose_name_plural = "Producción del huerto"
